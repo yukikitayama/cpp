@@ -1,5 +1,8 @@
 # Basic
 
+`int variable = 0;` declaring the variable and assigning the value at the same time. The part on the right side of `=` 
+sign is called **initiator**.
+
 ## Type
 
 **Modifier**
@@ -30,3 +33,39 @@ else if (boolean)
 else
   do_c();
 ```
+
+`if (number % 2)...` checks if a number is odd.
+
+`if (number)...` and `if (numer != 0)` are equivalent.
+
+## While loop
+
+```
+while (conditional_expression)
+  statement;
+```
+
+## Do loop
+
+The condition is checked at the end of the body execution, and the loop's body is executed at least once, even if the 
+condition is not met.
+
+```
+do {
+  statement_1;
+  statement_2;
+  :
+} while (condition);
+```
+
+## For loop
+
+```
+for (initialization of counter; check condition; modifying counter) {
+  /* the body goes here */
+}
+```
+
+The variable used for counting the loop's turns is called a **control variable**.
+
+
