@@ -68,4 +68,34 @@ for (initialization of counter; check condition; modifying counter) {
 
 The variable used for counting the loop's turns is called a **control variable**.
 
+If we omit any of the 3 components, it's presumed that there's a 1 there. It will make an infinite loop.
+
+## Logical operator
+
+`&&` for AND. `||` for OR. `!` for logical negation. e.g. `variable != 0` is equivalent to `!(variable == 0)`
+
+- `&` bitwise conjunction
+- `|` bitwise disjunction
+- `~` bitwise negation
+- `^` bitwise exclusive or
+
+The difference between logical operators and bitwise operators is, the logical operators are only interested in the 
+final integer value.
+
+**Bitmask** a sequence of zeros and ones whose task is to grab the value or to change the selected bits.
+
+## Switch
+
+Allowed to place more than one `case` in front to any branch
+
+```
+switch(i) {
+  case 1: cout << "Here" << endl; break;
+  case 2:
+  case 3: cout << "Okay" << endl; break; 
+  default: do_something();
+}
+```
+
+Okay will be applied when i is either 2 or 3.
 
