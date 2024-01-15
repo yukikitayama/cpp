@@ -12,4 +12,14 @@ struct STUDENT {
   float time;
   int recent_chapter;
 };
+
+struct STUDENT stdnt;
+STUDENT stdnt2;
+
+stdnt.time = 1.5;
 ```
+
+The declaration doesn't create a variable, but only describes the structure.
+
+`.` **selection operator**. 
+
