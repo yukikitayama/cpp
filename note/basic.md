@@ -99,3 +99,19 @@ switch(i) {
 
 Okay will be applied when i is either 2 or 3.
 
+## Ternary operator
+
+`expression1 ? expression2 : expression3`
+
+If the calculated value of `expression1` is **non-zero**, the ternary operator returns the value of `expression`.
+
+If the calculated value of `expression1` is **zero**, the ternary operator returns the value of `expression2`.
+
+### Ternary operator nesting
+
+```
+float max(float a, float b, float c) {
+  return a > b : (a > c ? a : c) : (b > c ? b : c);
+}
+```
+

@@ -63,6 +63,8 @@ value doesn't replace the actual parameter's value upon return from the function
 the parameter's name. The formal parameter is just a synonym of an actual parameter. Every modification made into a 
 formal parameter immediately affects an associated actual parameter.
 
+If a parameter is declared as passed by reference, its corresponding actual parameter must be a variable.
+
 - type `name` - the `name` parameter is passed by value
 - type `&name` - the `name` parameter is passed by reference
 
@@ -101,3 +103,34 @@ var = 2
 */
 ```
 
+Transferring a pointer to value is a way to pass by value but propagate the value outside the function. But this way is 
+not recommended. The declared function with prototype is like `void func(int *ptr);`
+
+**Default parameter** `void greet(string greet, int repeats = 1);`. When you set default parameter, the order of 
+parameters is important. Non-default parameters must be coded before the default ones.
+
+**Prologue** is the part of the code implicitly executed before the function code. Prologue stores parameters in **stack**.
+
+**Epilogue** is implicitly executed just after the function's code. Epilogue transfers the function result and clears the 
+stack made by prologue.
+
+The function code, prologue, epilogue occupy the same memory space, so the code is compact. But sometimes it cannot be 
+fast if the function invocation happens many times and if the function is shorter than prologue and epilogue.
+
+Insert the function's code directly into the invoker's code
+
+## Function inlining
+
+In function inlining, we expect the function to be invoked very often. Such function is **inline function**.
+
+`inline int function(int parameter)` or `int inline function(int parameter)`.
+
+## Overloading
+
+Having more than one function of the same name
+
+Consideration by
+- Number of parameters
+- Parameters' type
+
+The `return` type isn't taken into consideration.
