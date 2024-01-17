@@ -83,3 +83,10 @@ This computing environment uses:
 The name of an array without the indices is a synonym of the pointer pointing to the first element of the array.
 
 `int *ptr, arr[3]`, then `arr == &arr[0]` is true.
+
+## Amorphous pointer
+
+`void *ptr;`
+
+A pointer that points at nothing. It can point to any value of any type. Useful when you don't know what it may be used 
+for in the future.
