@@ -23,6 +23,18 @@ sign is called **initiator**.
 `bool` from **George Boole**, English mathematician in 19th century for algebraic logic. `!` is a negation operator, 
 unary prefix operator. `true` <-> `false`
 
+`double` has a wider range than `float` and better accuracy (precition)
+
+**Automatic conversion (implicit conversion)**, the compiler lmpws where the type conversions need to be applied and applies without asking our permission.
+
+**Explicit conversion (typecasting)**, type conversions performed at the developer's command. 
+
+**C-style casting** `new_type_name expression_of_old_type` e.g. `(int) variable`
+
+**Functional notation** `new_type_name(expression_of_old_type)` e.g. `int(variable)`
+
+`long data = 1L;` or `1l` the literal is explicitly defined as `long`
+
 ## Conditional
 
 ```
