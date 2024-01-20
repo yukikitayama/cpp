@@ -90,3 +90,13 @@ The name of an array without the indices is a synonym of the pointer pointing to
 
 A pointer that points at nothing. It can point to any value of any type. Useful when you don't know what it may be used 
 for in the future.
+
+
+## Array of pointers
+
+`int **` is **a pointer to a pointer to `int`**
+
+## Implicit conversions
+
+https://edube.org/learn/c-essentials-part-1-1/conversions-24
+
