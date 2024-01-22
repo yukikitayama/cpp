@@ -35,6 +35,14 @@ unary prefix operator. `true` <-> `false`
 
 `long data = 1L;` or `1l` the literal is explicitly defined as `long`
 
+### Promotion
+
+- `char` or `short int` will be converted to `int` (**Integer promotion**)
+- `float` will be converted to `double` (**Floating point promotion**)
+- If there's any value of `double` in expression, the other data will be converted to `double`
+- If there's any value of `long int` in expression, the other data will be converted to `long int`
+
+
 ## Conditional
 
 ```
