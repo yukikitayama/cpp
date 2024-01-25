@@ -93,6 +93,31 @@ outputs `0`
 
 `str1.append(number, character)` appends character by number times
 
+`str1.push_back(character)` appends a character at the back of the string.
+
+## Insert
+
+```
+  string quote = "Whyserious?", anyword = "monsoon";
+  quote.insert(3, 2, ' ').insert(4, anyword, 3, 2);
+  ```
+
+`quote` is `Why so serious?`
+
+## Replace
+
+`str.assign(number, character)` replaces it with a new one by `number` amount of `character`
+
+`ste.replace()` replaces a part of the string with another string or another string's substring.
+
+## Delete
+
+`str.erase()` removes a part of a string.
+
+## Exchange
+
+`str1.swap(str2)` replace the pointers identifying them and swap.
+
 ## Memory
 
 Every time we extend the string, e.g. concatenating another string to it, the new content is placed in the buffers. When the buffers are full but we try to extend the string again, the buffer is reallocated to for the new content. **Transparent** process.
