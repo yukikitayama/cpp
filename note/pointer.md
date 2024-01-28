@@ -12,9 +12,9 @@ variable of type "pointer to int". `p` is a variable of "type int asterisk"
 
 `p = 0;` **null pointer** a pointer which is assigned a value of zero. It doesn't point to anything. But this confuses 
 developers, so `p = NULL;` is used instead by convention. This is **macro**, a variable but you cannot modify its value.
- `NULL` should be assigned only to pointers.
+ `NULL` should be assigned only to pointers. To use `NULL`, you need to include the header file `cstring` or any other header file which include `cstring` like `iostream`.
 
-`p = &i;` `&` is a unary prefix operator, **reference operator**. This operator finds the address of its argument. So 
+We can assing to the pointer **a value which points to any already existing variable**. `p = &i;` `&` is a unary prefix operator, **reference operator**. This operator finds the address of its argument. So 
 `p` variable points to the place where the `i` variable is stored in the memory.
 
 ```
@@ -28,9 +28,11 @@ ptr = &ivar;
 
 `cout << *ptr;` will display `2` on the screen, as the dereferenced `ptr` value is sent to `cout`.
 
+`*ptr = 4;` will change the value of a variable pointed by the pointer.
+
 ## sizeof
 
-`sizeof` is a unary prefix operator. It provides information on how many bytes of memory its argument occupies.
+`sizeof` is a **unary prefix operator**. It provides information on **how many bytes of memory its argument occupies**.
 
 `char` values always occupy **one byte**. `i = sizeof(char);` variable `i` will be assigned the value of `1`. Below, 
 variable `i` will be set to the value of `10`.
