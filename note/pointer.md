@@ -14,7 +14,7 @@ variable of type "pointer to int". `p` is a variable of "type int asterisk"
 developers, so `p = NULL;` is used instead by convention. This is **macro**, a variable but you cannot modify its value.
  `NULL` should be assigned only to pointers. To use `NULL`, you need to include the header file `cstring` or any other header file which include `cstring` like `iostream`.
 
-We can assing to the pointer **a value which points to any already existing variable**. `p = &i;` `&` is a unary prefix operator, **reference operator**. This operator finds the address of its argument. So 
+We can assign to the pointer **a value which points to any already existing variable**. `p = &i;` `&` is a unary prefix operator, **reference operator**. This operator finds the address of its argument. So 
 `p` variable points to the place where the `i` variable is stored in the memory.
 
 ```
@@ -43,7 +43,7 @@ char tab[10];
 i = sizeof tab;
 ```
 
-Below, typically, the value of `int` type occupy `32 bits = 4 bytes`
+Below, typically, the value of `int` type occupy `32 bits = 4 bytes`, so `sizeof i` gives `4`.
 
 ```
 int i;
@@ -84,7 +84,21 @@ This computing environment uses:
 
 The name of an array without the indices is a synonym of the pointer pointing to the first element of the array.
 
-`int *ptr, arr[3]`, then `arr == &arr[0]` is true.
+`int *ptr, arr[3]`, then `arr == &arr[0]` is true. `&` is reference operator, so it gives the address of the first element of `arr` array, and it's true, because the array name `arr` also points to the first element of the array.
+
+## Arithmetic of pointers
+
+- pointer + integer -> pointer
+- pointer - integer -> pointer
+- pointer - pointer -> integer
+- pointer == pointer -> integer (1 because it's true)
+- pointer != pointer -> integer (0 because it's false)
+
+When addition of pointers occurs,
+1. Check the type pointed to by the pointer.
+2. Check how many bytes of memory the type occupies
+3. The value we want to add to the pointer is multiplied by the given size
+4. The address is increased by the product
 
 ## Amorphous pointer
 
