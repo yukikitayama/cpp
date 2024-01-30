@@ -1,12 +1,40 @@
 # Memory
 
+All work associated with memory allocation is organized by the compiler. High level languages and their compilers are designed to lease the developers' minds from such responsibilities.
+
+But C++ gives developers control over how much memory is used and when it's used, meaning allocating and freeing up of memory.
+
 `new` and `delete` the 2 specialized keywords that C++ gives us to have full control over how much memory is used and 
 when it's used.
 
 `new` keyword requests the creation of a new memory block. When it's no longer needed, the `delete` keyword returns the 
 memory to the operating system.
 
+## new
+
+The **new statement** needs a type. If the created entity is an array, it needs size.
+
+`new` returns a pointer of type.
+
+The newly allocated memory area is not fill (initiated) in any way, so it contains **garbage**.
+
+Example
+
+```
+float *array = new float[20];
+int count = new int
+```
+
+## delete
+
 `delete` allows us to release it (free it) when we no longer need the memory.
+
+Example
+
+```
+delete [] array;
+delete count;
+```
 
 To free up memory for array `float *array = new float[10];`, use `delete []` like `delete [] array;`
 
@@ -26,4 +54,46 @@ for (int i = 0; i < 5; i++)
 delete[] arr;
 ```
 
+## Use case
+
+Ask the user how many numbers will be sorted and then allocate an array of the appropriate size. `int * numbers`, `numbers = new int[how_many_numbers];`, and `delete[] numbers;` are relevant part.
+
+```
+#include <iostream>
+
+using namespace std;
+int main(void) {
+  int * numbers, how_many_numbers;
+  int aux;
+  bool swapped;
+
+  cout << "How many numbers are you going to sort? ";
+  cin >> how_many_numbers;
+  if (how_many_numbers <= 0 || how_many_numbers > 1000000) {
+    cout << "Are you kidding?" << endl;
+    return 1;
+  }
+  numbers = new int[how_many_numbers];
+  for (int i = 0; i < how_many_numbers; i++) {
+    cout << "\nEnter the number #" << i + 1 << ": ";
+    cin >> numbers[i];
+  }
+  do {
+    swapped = false;
+    for (int i = 0; i < how_many_numbers - 1; i++)
+      if (numbers[i] > numbers[i + 1]) {
+        swapped = true;
+        aux = numbers[i];
+        numbers[i] = numbers[i + 1];
+        numbers[i + 1] = aux;
+      }
+  } while (swapped);
+  cout << endl << "The sorted array:" << endl;
+  for (int i = 0; i < how_many_numbers; i++)
+    cout << numbers[i] << " ";
+  cout << endl;
+  delete[] numbers;
+  return 0;
+}
+```
 

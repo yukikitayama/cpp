@@ -104,8 +104,11 @@ When addition of pointers occurs,
 
 `void *ptr;`
 
-A pointer that points at nothing. It can point to any value of any type. Useful when you don't know what it may be used 
-for in the future.
+A pointer that points at nothing. It can point to any value of any type. 
+
+You cannot dereference it by `*ptr;`.
+
+Useful when you don't know what it may be used for in the future. As soon as it becomes clear, the pointer can easily be converted into another pointer of the desired type.
 
 
 ## Array of pointers
