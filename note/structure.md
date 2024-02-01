@@ -23,3 +23,12 @@ The declaration doesn't create a variable, but only describes the structure.
 
 `.` **selection operator**. 
 
+## Arrow operator ->
+
+**Arrow operator** `->` allows to access elements in **Structure** and **Union**. It's used with **pointer variable pointing to a structure or union**.
+
+`(pointer_name)->(variable_name)`
+
+https://www.geeksforgeeks.org/arrow-operator-in-c-c-with-examples/
+
+
