@@ -11,7 +11,9 @@ sign is called **initiator**.
 
 `short` 16 bits. `short int counter;` or `short counter;`. `int` can omit.
 
-`long` 64 bits. `long large_number;` `int` can omit.
+`long` 64 bits. `long large_number;` `int` can omit. 
+
+`1L` means a long integer literal. Integer literals have `int` type by default. But `L` suffix to a integer literal gives it a type of `long`. https://stackoverflow.com/questions/2958007/what-does-the-l-mean-at-the-end-of-an-integer-literal
 
 `unsigned positive` for a number never be a negative number.
 
@@ -19,6 +21,8 @@ sign is called **initiator**.
 
 `long float` is a synonym for `double`. 32-bit long `float` can store 8 precise digits, but `double` can save about 
 15-17 digits. `double` comes from - its accuracy is doubled compared to `float`.
+
+`f` is suffix to float type. `2.0f` (or `2.f`) is `float`, while `2.0` is `double`.
 
 `bool` from **George Boole**, English mathematician in 19th century for algebraic logic. `!` is a negation operator, 
 unary prefix operator. `true` <-> `false`
