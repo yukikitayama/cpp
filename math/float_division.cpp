@@ -2,7 +2,7 @@
 using namespace std;
 
 float Float(float x) {
-    return 2 * x / (.5 + x);
+    return 2 * x / (.5 * x);
 }
 
 void Void(int n) {
@@ -10,10 +10,13 @@ void Void(int n) {
 
     while(n) {
         cout << "while start" << endl;
+
         v = Float(v);
-        n >>= 1;
         cout << v << endl;
+
+        n >>= 1;
         cout << n << endl;
+
         cout << "while end" << endl;
     }
 
