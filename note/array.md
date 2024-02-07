@@ -23,5 +23,8 @@ Array initialization `int vector[5] = {0, 1, 2, 3, 4};`. If you don't specify, t
 
 Two dimensional array `int chessboard[8][8];` (matrix)
 
+## Vector
+
+`vector_variable.data()` returns a pointer to the first element in the array.
 
 
