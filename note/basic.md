@@ -139,3 +139,14 @@ float max(float a, float b, float c) {
 }
 ```
 
+## Number
+
+### Integer literal
+
+`111'222'333` is valid integer literal for `11122233`. `'` digit separators make large values more readable.
+
+### Exponentiation
+
+`1e1` is `10`, not `11`.
+
+`1e0` is `1`.
