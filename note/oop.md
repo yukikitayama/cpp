@@ -4,6 +4,7 @@
 
 - The data and the code are enclosed together in the same world, divided into classes.
 - Each class is like a recipe that can be used when you want to create a useful object.
+- Create a template which is a generalized, parameterized class for vary requirements and different situations to be used.
 
 ## Object
 
@@ -18,6 +19,10 @@
 ## Inheritance
 
 - Any object bound to a specific level of a class hierarchy inherits all the traits defined inside any of the superclasses.
+
+## Encapsulation
+
+The ability to hide (protect) selected values against unauthorized access. Neither accessed or modified if use exclusively.
 
 **Property (member variable)** is data of object
 
