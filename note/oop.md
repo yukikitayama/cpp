@@ -18,6 +18,12 @@
 
 `class <subclass-name>:<superclass-name> {};`
 
+When you create a subclass object, you should take care of the superclass initialization.
+
+`<subclass-name>::<subclass-name>(void) : <superclass-name>() {}`
+
+`: <superclass-name>()` invokes the superclass constructor before the current constructor starts its work.
+
 ## Inheritance
 
 - Any object bound to a specific level of a class hierarchy inherits all the traits defined inside any of the superclasses.
@@ -30,14 +36,24 @@ The ability to hide (protect) selected values against unauthorized access. Neith
 
 `public:` accessible to users of a class.
 
+When components are declared without **access specifier** (`public`, `private`), the components are **private** by default.
+
+A function that is a class component has full access to other class components including private ones.
+
 `<class-name>::<class-outsite-function-name>` implements class method outside the class.
 
 **Constructor** uses the name same as the class name.
 
-**Property (member variable)** is data of object
+## Components
 
-**Method (member function)** is function of object
+Variables (properties) and functions (methods) are class **compoents**.
+- **Property (member variable)** is data of object
+- **Method (member function)** is function of object
 
+`this` pointer, a pointer to the current object.
 
+## Pointer
 
-
+When `S` is a class and `C` is a component, and `p` is a pointer to `S`, the `C` component is accessed by either
+- `(*p).C`, explicitly dereferenced to access `C`
+- `p->C`, implicitly dereferenced to access `C`.
