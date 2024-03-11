@@ -42,7 +42,13 @@ A function that is a class component has full access to other class components i
 
 `<class-name>::<class-outsite-function-name>` implements class method outside the class.
 
-**Constructor** uses the name same as the class name.
+## Constructor
+
+**Constructor** uses the name same as the class name. A function with a name identical to its home class name. The constructor must not be declared using return type specifications. It can be overloaded.
+
+**Copying constructor** is intended to copy one object into another. A constructor which has one parameter to an object of the same class and is used to copy data from the source object to the object **currently being created**. Implicitly invoked. The copied data could be modified during the process.
+
+`const` in the parameter declaration is **a promise** that the function won't modify the values in the referenced object.
 
 ## Components
 
