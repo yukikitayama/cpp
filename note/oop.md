@@ -63,3 +63,19 @@ Variables (properties) and functions (methods) are class **compoents**.
 When `S` is a class and `C` is a component, and `p` is a pointer to `S`, the `C` component is accessed by either
 - `(*p).C`, explicitly dereferenced to access `C`
 - `p->C`, implicitly dereferenced to access `C`.
+
+## Memory
+
+**Memory leak** is failure to clean the memory. Objects are allocated memory and this memory should be released when the object finishes its activity and cleaning automatically.
+
+**Automatic variable** is a variable inside a function which automatically finishes its life when the execution of the function ends.
+
+**Destructor** is a special function to protect from memory leaking.
+- named `~X` if class name is `X`.
+- Once class has only one destructor.
+- No parameters
+- Invoked implicitly.
+
+`auto` keyword came from **C** programming language, meaning automatic variable, creted and destroyed automatically. In C and C++, all variables are automatic by default unless declared explicitly as static. People still use `auto` for backward compatibility.
+
+`static` is a keyword to make a variable persist from **program prologue** to **program epilogue**.
