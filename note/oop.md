@@ -78,4 +78,21 @@ When `S` is a class and `C` is a component, and `p` is a pointer to `S`, the `C`
 
 `auto` keyword came from **C** programming language, meaning automatic variable, creted and destroyed automatically. In C and C++, all variables are automatic by default unless declared explicitly as static. People still use `auto` for backward compatibility.
 
+## Static component
+
 `static` is a keyword to make a variable persist from **program prologue** to **program epilogue**.
+
+A static component exists throughout the whole life of the program.
+
+Only one component regardless of the number of instances of the class. Different objects of the same class share the static variables and functions.
+
+Static class variables act as counters of instances of a particular class.
+
+Static functions (or variable) cannot invoke a non-static function, because non-static function can exists when the object of a class exists. Compilation error.
+
+Non-static function can invoke static function because the static function is available before any object has been created.
+
+Static function can invoke static function, and non-static function can invoke non-static function.
+
+
+
