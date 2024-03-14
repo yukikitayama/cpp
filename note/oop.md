@@ -94,5 +94,13 @@ Non-static function can invoke static function because the static function is av
 
 Static function can invoke static function, and non-static function can invoke non-static function.
 
+## Stack
+
+**Stack** is a separate area of memory to store all automatic variables. Not under my control.
+
+**Heap** is a memory region where the entities are created on demand by `new`. Under my control.
+
+Use `->` arrow operator to access the object in the heap.
+
 
 
