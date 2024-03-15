@@ -102,5 +102,10 @@ Static function can invoke static function, and non-static function can invoke n
 
 Use `->` arrow operator to access the object in the heap.
 
+## Objects inside objects
 
+An object of any class may be the field of an object of any other class.
 
+Constructors from inner objects (objects stored inside other objects) are invoked before the outer object's constructors start their work.
+
+`class-constructor(...) : inner_field_constr1(...), inner_field_constr2(...) {...}` to list all the inner obejcts' constructors that you wish to use instead of the default constructors.
