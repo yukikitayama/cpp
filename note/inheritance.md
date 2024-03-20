@@ -11,3 +11,5 @@ When you omit the **visibility specifier**, it will be **private inheritance**, 
 `protected` keyword allows components to behave like a public component when used by subclass, but looks like private component to the rest.
 
 `public`, `private` and `protected` makes the **visibility inheritance model**.
+
+**Overriding** is when a subclass declares a method of the name previously known in its superclass, the original method is overridden.
