@@ -13,3 +13,11 @@ When you omit the **visibility specifier**, it will be **private inheritance**, 
 `public`, `private` and `protected` makes the **visibility inheritance model**.
 
 **Overriding** is when a subclass declares a method of the name previously known in its superclass, the original method is overridden.
+
+## Polymorphism
+
+**Polymorphism** is a method to redefine the behavior of a superclass without touching its implementation.
+
+It means that the one and same class may show many forms not defined by the class itself, but by its subclasses. It's the ability to realize class behavior in multiple ways. Any of its subclasses may change its behavior.
+
+Use `virtual` keyword.
