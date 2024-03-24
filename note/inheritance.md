@@ -21,3 +21,13 @@ When you omit the **visibility specifier**, it will be **private inheritance**, 
 It means that the one and same class may show many forms not defined by the class itself, but by its subclasses. It's the ability to realize class behavior in multiple ways. Any of its subclasses may change its behavior.
 
 Use `virtual` keyword.
+
+## Copying constructor
+
+**Copying constructor** expects one parameter to be a reference to an object.
+
+`A(A &)` if class is called `A`.
+
+If there's no explicit copying constructor, an **implicit constructor** will be used. The implicit constructor simply clones.
+
+`Class o1();`, `Class o2 = o1;`, `Class o3(o2);`. `=` operator of assignment notation and functional notation are used to copy.
