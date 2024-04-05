@@ -22,9 +22,6 @@ In C++, **division by zero doesn't throw an exception**.
 
 `catch` statement will be placed after `try` statement, and it will catch only those exceptions that are compatible with the specified type.
 
-`catch(...)` doesn't identify the exception object and doesn't make any use of it, but it acts for some very general actions, such as final cleaning.
+`catch(...)` doesn't identify the exception object and doesn't make any use of it, but it acts for some very general actions, such as final cleaning. This is called **ellipsis branch**.
 
 `catch(exception &ex)` can catch all exceptions because all exceptions are derived from the `exception` class and compatible in type.
-
-
-
