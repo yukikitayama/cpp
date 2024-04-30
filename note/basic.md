@@ -150,3 +150,59 @@ float max(float a, float b, float c) {
 `1e1` is `10`, not `11`.
 
 `1e0` is `1`.
+
+## Keyword
+
+C++ has about 90 keywords.
+
+`#include`, `main()`, variable name, `std`, `cout`, etc. These are not keywor, but **identifier**.
+
+## Comment
+
+Comments will be removed before a compiler sees it.
+
+`// This is a single line comment` or `int var_name; // Inline comment`
+
+```
+/*
+This is
+a multiple line
+comment
+*/
+```
+
+## Main
+
+Every program must have exactly 1 main() function.
+
+When a C++ program is executed, the main function is called by the operating system.
+
+The code between curly braces of the main function executes.
+
+When the program hits the return statement, the program returns the integre value to the operating system.
+
+Return 0 indicates successful program execution.
+
+There are 2 versions of main functions
+
+```
+int main()
+{
+  // Code
+  return 0;
+}
+```
+
+`program.exe`
+
+```
+int main(int argc, char *argv[])
+{
+  // Code
+  return 0;
+}
+```
+
+`argc` is the count of arguments. `*argv[]` is a vector of strings.
+
+`program.exe argument1 argument2`

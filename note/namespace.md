@@ -1,5 +1,9 @@
 # Namespace
 
+When a program becomes complex by the combination of our own code, C++ standard libraries and third party libraries, we will have a **naming conflict**. **Namespaces** are used to reduce naming conflict.
+
+We use namespaces as containers to group the code entities.
+
 The **name space** is a space where a particular name has an unambiguous and clear meaning.
 
 Name spaces exist to avoid the possibility of a **name conflict**.
@@ -22,6 +26,18 @@ A way to qualify the names like `cout`, `endl` in order to bind them to their ho
   using namespace name;
   variable
 }
+```
+
+Many programmers find it tedious to type `std::` all the time, you can use `using namespace std`.
+
+```
+using namespace std; // Use the entire std namespace
+```
+
+```
+using std::cout; // Use only what you need
+using std::cin;
+using std::endl;
 ```
 
 ## Define namespace
