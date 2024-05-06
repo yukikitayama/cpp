@@ -6,6 +6,8 @@ Both `const in size1 = 100;` and `int const size2 = 100;` forms are acceptable. 
 
 You must not declare a `const` without initialization. `const int size;` will cause a compilation error.
 
+**Defined constants** `#define p1 3.14`. But don't use defined constants in Modern C++.
+
 **Constant pointer** can be declared with a specific syntax. `const` keyword is placed after the `*` and before the variable name. These pointers cannot be incremented or decremented. The entities pointed to by the const pointers may be modified.
 
 ```

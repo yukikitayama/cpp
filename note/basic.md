@@ -3,7 +3,76 @@
 `int variable = 0;` declaring the variable and assigning the value at the same time. The part on the right side of `=` 
 sign is called **initiator**.
 
-## Type
+## Variable
+
+- A **variable** is an abstraction for a memory location. 
+- Variables have **type** and **value**. This is **static typing** because **compiler** is enforcing a rule.
+- Variables must be **declared** before they are used.
+- **Declaring variables** is `type`, `name`, and `;`
+- Declare variables close to when you need them in your code.
+- There are 3 ways to initialize variables
+  - `int age = 21; // C-like initialization`
+  - `int age (21); // Constructor initialization`
+  - `int age {21}; // C++11 list initialization syntax`. This style is recommended by Dr. Frank course.
+
+### Global variable
+
+- Variables defined in a function are **local variable**.
+- Variabled declared outside any functions are **global variable** which can be acceessed from any parts in a program.
+- Unlike local variables, global variables are automatically initialized to be 0.
+- To declare global variables, declare outsite `main()` function or outside any other functions.
+
+## Type (Primitive type, fundamental type)
+
+- Character
+- Integer
+  - Signed and unsigned
+- Floating-point
+- Boolean
+
+Unlike other programming languages, size and precision of C++ depend on the platform and compiler.
+
+`#include <climits>` can tell you the size and precision of your compiler.
+
+Type sizes are in bits. The more bits, the more values can be represented. The more bits, the more storage requried.
+
+With 8 bits, we can store 256 unique values by `2**8`. With 16 bits, we can store 65,536 unique values by `2**16`.
+
+Character type
+
+- Used to represent **single** characters. Character data type is oftern implemented by 8 bits, which can represent at most 256 unique characters.
+- Use `'` single quotation to create character.
+- Don't use `"` double quotation becuase it creates `string`.
+- `char initial {'Y'};`
+
+Integer type
+
+- By defulat, integer type use **signed** integer.
+- Short int, int uses 16 bits, long int uses 32 bits, and long long int uses 64 bits.
+  - If you need to store a huge number, you need to use long.
+- C++14 allows you to use `\`` to separate digits in a large number of readability
+  - `long long people_on_earth {7\`600\`000\`000\`};`
+- The C style initialization`long people_on_earth = 7600000000;` won't throw error but the number is incorrect when overflow, but list initialization `long people_on_earth {7600000000};` can catch a problem in compiling time
+
+Floating-point type
+
+- Floating-point represent non-integer, meaning real numbers.
+- Computer has a finite store, so it cannot store infinite decimal points like `pi`, so the computer stores a approximation to the real number.
+- `float` has 7 decimal digits, `double` has 15 decimal digits, and `long double` has 19 decimal digits.
+- Instead of `float num {401.23};`, `long double num {2.7e120};` also works with `e`.
+
+Boolean type
+
+- 0 is `false`
+- Any non-zero values are `true`.
+- You can initialize variable by `bool is_active {false};` but `cout << is_active` prints out `0`.
+
+## Size
+
+- `sizeof` operator determines the size in bytes of a type or variable. It tells how much storage is necessary to represent types and variables.
+  - `sizeof(int)` returns in bytes
+  - `sizeof(some_variable)`, but `sizeof some_variable` omitting parenthesis can work only for variables
+- `<climits>` and `<cfloat>` include files which contain size and precision information about your implementation of C++.
 
 **Modifier**
 
