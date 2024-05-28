@@ -1,5 +1,13 @@
 # Switch
 
+The `break` statements are optional, but best practice is to include break statements for every `case` statement.
+
+A switch statement can have a `default` case at the end that will execute when none of the cases is true. `break` statement is not needed in the `default` case. `default` statement is optional, but best practice is to include it.
+
+You can have multiple statements in `case` statement without a black `{ }`. If you need to declare variables in `case` statement, you need a block `{ }`.
+
+When you use `enum` for `switch` statement and if `case` statements don't handle all the values of `enum`, the compiler will warn you the missings. Quick workaround is to use `default` statement for non-covered `enum`.
+
 ## How it works
 
 1. The value of the expression enclosed inside the parenthesis after the `switch` keyword is evaluated

@@ -30,6 +30,16 @@ In C++20, `<=>` is **three-way comparison**.
 
 https://stackoverflow.com/questions/47466358/what-is-the-spaceship-three-way-comparison-operator-in-c
 
+## Compound assignment operator
+
+`+=` is called **compound assignment operator**. `a += 1` is `a = a + 1`.
+
+`a *= b + c` (no need parenthesis) means `a = a * (b + c)`
+
+## Conditional operator
+
+**Conditional operator** `(cond_expr) ? expr1 : expr2` can be used in `cout`. `cout << ((score > 90) ? "Excellent" : "Good");`
+
 ## Overloading
 
 We can redefine any of the existing operators by **overloading** operators. But we cannot define completely new operators. C++ treats overloaded operators as very specific functions.
