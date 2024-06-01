@@ -57,3 +57,73 @@ for (auto score : scores) {
 }
 ```
 
+## While loop
+
+boolean flag while loop
+
+```
+bool done {false};
+
+while (!done) {
+    // Do something
+    done = true;
+}
+```
+
+## do-while loop
+
+**do-while loop** is post test loop. Loop body will be executed at least once
+
+Need to declare variable outside do body (before `do`) is the variable is used in while expression.
+
+```
+do {
+    statements;
+} while (expression);
+```
+
+## Infinite loop
+
+```
+for (;;)
+  cout << "This will print forever" << endl;
+```
+
+```
+while (true)
+  cout << "This will print forever" << endl;
+```
+
+```
+do {
+  cout << "This will print forever" << endl;
+} while (true);
+```
+
+## Nested loop
+
+Inner loop is faster than outer loop.
+
+2D vector example using `auto`.
+
+```
+vector<vector<int>> vector_2d
+{
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+for (auto vec: vector_2d) {
+    for (auto val: vec) {
+        cout << val << " ";
+    }
+    cout << endl;
+}
+
+/*
+1 2 3
+4 5 6
+7 8 9
+*/
+```
