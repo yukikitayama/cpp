@@ -1,6 +1,36 @@
 # String
 
-`include <string>`
+`str::string` is a Class in the **Standard Template Library**. C++ string has dynamic size at runtime, while C-style is fixed size.
+
+C++ string can be converted to C-style string.
+
+Use `#include <string>` and `using namespace std;` together to use C++ string.
+
+Declaring and initializing
+```
+string s1 {"Yuki"}; // Yuki
+string s2 {"Yuki", 3} // Yuk
+string s3 {"Yuki", 1, 2} // uk
+string s4 (3, 'X'); // XXX
+```
+
+The below is illegal, because the two are C-style literals, so cannot perform concatenation.
+```
+string sentence;
+sentence = "C++" + " is powerful"; // Illegal
+```
+
+**Range-based for loop** can work for C++ string.
+
+`string::npos` no position information available
+```
+string s1 {"This is test"};
+cout << s1.find("XX"); // string::npos
+```
+
+`string1.length();`, not size.
+
+`getline(cin, s1)l` can read entire line until `\n`. This works when input contains spaces between characters.
 
 `string` type is not a built-in type. Need to put `#include` directive at the top, and request a header file named `string`. Without it, it causes a compilation error.
 
