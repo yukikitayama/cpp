@@ -1,5 +1,32 @@
 # Function
 
+Without **function prototype**, compiler must know the function details before it is called. It means you cannot define function below the line of calling the function.
+
+**Function prototype** tells the compiler what it needs to know without a full function definition. It's also called **forward declarations**. Place functions prototypes at the beginning of the program. Function prototypes are also used in **header files**. Semi-colon at the end. The compiler only cares about the types of argument and return.
+
+```
+int function_name(); // prototype
+
+int function_name()
+{
+  statements(s);
+  return 0;
+}
+```
+
+The data to be passed to a function
+- Called **argument** in the function call
+- Called **parameter** in the function defition
+
+**Pass-by-value** is the usual way you pass data into a function
+- A **copy** of the data is passed to the function
+- Whatever changes you make to the parameter in the function does not affect the argument that was passed in.
+- Pass-by-value is the default behavior of C++ function.
+
+**Formal parameters** are the parameters defined in the function header.
+
+**Actual parameters** are the parameters used in the function call ("the arguments").
+
 - Predefined functions or library functions
 - Functions witten by you
 
