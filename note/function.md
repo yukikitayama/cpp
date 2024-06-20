@@ -37,6 +37,17 @@ The data to be passed to a function
 
 C++ allows us to create overload functions which are functions that have different parameter lists but have the same name. It's a type of abstraction and a type of **polymorphism** meaning many forms with the same concept. **Return type is not considered**. Overloaded functions with default arguments could trigger ambiguous call of the function, so need to be careful.
 
+Passing arrays to functions needs to provide **square brackets** in the formal parameter description. **The array elements are not copied**, because the array name evaluates to the location of the array in memory - this address is what is copied. The function has no idea how many elements are in the array since all it knows is the location of the first element (the name of the array). Since it's passing the location of the array, the function can modify the actual array. `const` parameters (e.g. `const int nums []`) can tell the compiler that function parameters are const (read-only). If a function attempts to modify the array, it will result in a compiler error.
+
+**Pass by reference** is to change the actual parameter from within the function body. It allows us to use the location or address of the actual parameter. Use **reference parameter** `&param_name` to tell the compiler to pass in a reference to the actual parameter. The formal parameter will now be an alias for the actual parameter. If pass-by-reference has concerns for overwriting the contents, `const` keyword can be used with `&`.
+
+Pass by reference
+- It allows us to change an actual parameter if we need to
+- We don't make a copy of the parameter which could be large and take time.
+  - e.g. When we pass a huge vector to a function, passing reference to the vector is efficient, because the pass-by-value instead makes copy and allocate memory before running a function.
+
+-----------
+
 - Predefined functions or library functions
 - Functions witten by you
 
