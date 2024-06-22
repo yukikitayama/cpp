@@ -46,6 +46,27 @@ Pass by reference
 - We don't make a copy of the parameter which could be large and take time.
   - e.g. When we pass a huge vector to a function, passing reference to the vector is efficient, because the pass-by-value instead makes copy and allocate memory before running a function.
 
+Scope rules
+
+C++ uses static or lexical scoping, meaning the scope is determined in the order of the code lines. C++ has 2 scopes; Local scope (Block scope) or global scope.
+
+Local scope (Block scope)
+- Identifiers declared in block `{}`.
+  - Every time you see a block, it creats a new level of scope.
+- Only visible within the block
+- Function parameters have this
+- With nested blocks inner blocks can see but outer blocks cannot see in.
+
+**Static local variables** are the values which are preserved between function calls. It has the same lifetime as the program. Only visible in the statements of the function bodies. e.g. `static int value {10};`. Only initialized the first time the function is called. It's handly if you wanna know the value of the previous function calls.
+
+For example, one function is defined to initialize a static local variable. We call this function for the first time, the variable is initialized. When we call the same function again in the same program, it will skip the initialization and keep using the value from the previous function call. Initialization only happens once.
+
+Global scope
+- Identifiers declared outside any function or class.
+- Visible to all parts of the program
+- Global constants are ok.
+- **Best practice is don't use global variables**.
+
 -----------
 
 - Predefined functions or library functions
