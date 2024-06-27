@@ -67,6 +67,31 @@ Global scope
 - Global constants are ok.
 - **Best practice is don't use global variables**.
 
+**Function call stack** is Last In First Out, push and pop.
+
+**Stack frame (activation record)**
+- Functions return control to functions that called it
+- Each time, a new activation record is created and push it on stack
+- When a function terminate, the activation record is popped and return.
+- Local variables and function parameters are allocated on the stack
+- Stack size is finite, so if exceeds, **stack overflow**.
+
+**Inline function** `inline`
+- Avoid **function call overhead**
+- Generally faster
+- Could cause code bloat
+- Compilers optimizations are very sophisticated, so it will likely inline even without your suggestion, so no need to worry about too much.
+
+```
+inline int add_numbers(int a, int b) {
+    return a + b;
+}
+```
+
+Recursive function has base case, and divides the rest of problem into subproblem and do recursive call.
+
+
+
 -----------
 
 - Predefined functions or library functions
