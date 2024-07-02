@@ -1,5 +1,32 @@
 # Pointer
 
+C++ programs are used to develop operating systems, system software, device drivers, embedded systems. With these systems, we want to be in complete control over the hardware. C++ is used to use and release memory efficiently and correctly. Syntax using pointers a little intimidating at first.
+
+**Pointer** is a variable whose value is an address of another variable or a function.
+
+If `x` is an integer variable and its value is `10`, then I can declare a **pointer** that points to it. To use the data that the pointer is pointing to, you must know its **type**.
+
+Why use pointers?
+- Allocate memory dynamically on the **heap** or **free store**, because this memory doesn't have a variable name, and the only way to get to it is via a pointer
+- With OO pointers are how **polymorphism** works
+- Accessing specific addresses in memory is useful in embedded and systems applications.
+
+Declaring pointers
+
+`variable_type *pointer_name;`. You can place `*` either next to type or name. But recommended approach is to place `*` next to pointer name.
+
+```
+int *int_ptr;
+string *string_ptr;
+```
+
+`variable_type *variable_name {nullptr};` initializes pointer variable to point nowhere.
+
+- **Always initialize pointers**
+- If we don't initialize the pointers, they contain garbage, meaning point anywhere.
+- Initializing to zero or `nullptr` (C+11) represents address zero.
+- **If you don't initialize a pointer to point to a variable or function, then you should initialize it to `nullptr` to "make it null"**.
+
 The **value** of the variable is what the variable stores.
 
 The **address** of the variable is information about where this variable is placed.
