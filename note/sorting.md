@@ -1,5 +1,20 @@
 # Sorting
 
+**Lambda function** for customized sorting. https://leetcode.com/problems/sort-array-by-increasing-frequency
+
+```
+sort(nums.begin(), nums.end(), [&](int a, int b) {
+    if (freq[a] == freq[b]) {
+        return a > b; 
+    }
+    return freq[a] < freq[b];
+});
+```
+
+- `[&](int a, int b) { ... }` is lambda function as **comparator**
+- `&` enables external variables (`freq`) by reference
+
+
 ## Bubble sort
 
 Continue iteration until swap doesn't occur.
