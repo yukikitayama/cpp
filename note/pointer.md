@@ -1,5 +1,55 @@
 # Pointer
 
+`&` the **address operator** (unary operator) evaluates to the address of its operand.
+
+`int *p;` declares a pointer. `p` is the value of the address pointing at another data. `&p` is the address of this pointer itself.
+
+`p = nullptr` sets `p` to have the value of `0`.
+
+The sizes of pointers with different types are the same, but the sizes of what they points to may be different; very large to very small.
+
+**Dereferencing a pointer** means to access the data a pointer is pointing to. Applying **dereferenceing operator `*`** to the pointer gives us the data at the address contained in the pointer. We can change the value of a data via the dereferenced pointer.
+
+To access an element of vector via vector pointer, use `(*vector_ptr).at(0)`.
+
+- **Pointers to constants** are where the data pointed to by the pointers is constant and cannot be changed. But the pointer itself can change and point somewhere else
+  - `const int *score_ptr { &high_score };`
+- **Constant pointers** are where the data pointed to by the pointers can be changed, but the pointer itself cannot change and point somewhere else.
+  - `int *const socre_prt { &high_score };`
+- **Constant pointers to constants** are where the data pointed to by the pointer is constant and cannot be changed, and the pointer itself cannot change and point somewhere else
+  - `const int *const score_ptr { &high_score };`
+
+Passing pointers to a function is called **pass-by-reference** with pointer parameters. By dereference operator, we can achieve pass-by-reference. The actual parameters when we call this function, we can use a pointer or address of a variable.
+
+```
+void double_data(int *int_ptr) { // Pointer parameter
+    *int_ptr *= 2; // Dereference operator
+}
+
+int value {10};
+
+double_data(&data); // Address operator to pass the address of a variable
+```
+
+Functions can also return pointers, meaning return the address. `type *function();`. To return dynamically allocated memory, we need to create a pointer inside the function and return the pointer. But never return a pointer to a local variable of the function. The data the pointer points to exists in Heap.
+
+Pointer pitfalls
+- Uninitialized pointers, which points anywhere
+- Dangling pointer
+  - Pointer that is pointing to released memory.
+- Leaking memory
+  - Forgetting to release allocated memory with delete
+  - Most common pointer problem
+
+Pointers vs. references
+- Pass-by-value
+  - When the function does not modify the actual parameter
+  - Parameter is small and efficient to copy like simple types (int, char, double)
+- Pass-by-reference using pointer, pointer to `const`, reference, and `const` reference
+  - When the function does modify the actual parameter
+  - Parameter is expensive to copy
+  - Collections types like strings, vector
+
 C++ programs are used to develop operating systems, system software, device drivers, embedded systems. With these systems, we want to be in complete control over the hardware. C++ is used to use and release memory efficiently and correctly. Syntax using pointers a little intimidating at first.
 
 **Pointer** is a variable whose value is an address of another variable or a function.
@@ -26,6 +76,29 @@ string *string_ptr;
 - If we don't initialize the pointers, they contain garbage, meaning point anywhere.
 - Initializing to zero or `nullptr` (C+11) represents address zero.
 - **If you don't initialize a pointer to point to a variable or function, then you should initialize it to `nullptr` to "make it null"**.
+
+Array and pointer
+
+The value of an array name is the address of the first element in the array. If the pointer points to the same data type as the array element, then the pointer and array name can be used interchangeably (almost)
+
+```
+int array_name[] {1, 2, 3};
+int *pointer_name {array_name};
+```
+
+Subscript notation
+- `array_name[index]`
+- `pointer_name[index]`
+
+Offset notation
+- `*(array_name + index)`
+- `*(pointer_name + index)`
+
+Pointer arithmetic
+
+`int_ptr++;` increments a pointer to point to the next array element. `int_ptr--;` decrements a pointer to point to the previous array element.
+
+`+` increments pointer by `n * sizeof(type)` and `-` decrements pointer by `n * tsizeof(type)`.
 
 The **value** of the variable is what the variable stores.
 

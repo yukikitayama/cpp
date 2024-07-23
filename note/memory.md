@@ -97,3 +97,40 @@ int main(void) {
 }
 ```
 
+## Dynamic memory allocation
+
+**Dynamic memory allocation** is allocating storage from the heap at runtime. We can use **pointers** to access newly allocated heap storage.
+
+Use `new` keyword to allocate storage at runtime.
+
+Use `delete` to deallocate storage
+
+Allocated storage contains garbage until we initialize them
+
+```
+int *int_ptr {nullptr};
+
+int_ptr = new int; // Allocate an integer on the heap
+
+cout << int_ptr << endl; // Shows address
+
+cout << *int_ptr << endl; // * deferences the pointer but it shows garbage, because it's not initialized yet.
+
+*int_ptr = 100; // We initialize
+
+cout << *int_ptr << endl; // 100
+
+delete int_ptr; // frees the allocated storage
+```
+
+Deallocating array needs careful syntax
+
+```
+int *array_ptr {nullptr};
+
+array_ptr = new int[size];
+
+delete [] array_ptr; // Don't forget []
+```
+
+The pointer is the only way to access the data created dynamic memory allocation. If we lose the pointer, it's called **memory leak**. Before using `delete`, the pointer variable is gone or assign `nullptr` to the pointer, then we lose the only way to access the data.
