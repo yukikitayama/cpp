@@ -12,8 +12,9 @@ Name spaces exist to avoid the possibility of a **name conflict**.
 
 A way to qualify the names like `cout`, `endl` in order to bind them to their home name space (`std`)
 
-- `using namespace std;` then `cout`
+- `using namespace std;` then `cout`. This uses entire `std`
 - `std::cout`
+- `using namesapce std::cout;`, `using namesapce std::cin;`. This uses only `cout` and `cin`. Use only what you need.
 
 `::` is called **scope resolution operator**
 

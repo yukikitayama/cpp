@@ -1,6 +1,56 @@
 # Inheritance
 
-Superclass is **base** class. Subclass is **derived** class.
+Superclass is **base** class (parent class, super class). Subclass is **derived** class (child class, sub class).
+
+- **Is-A relationship**
+  - Derived classes are sub-types of their base classes.
+- **Generalization**
+  - Combine similar classes into a single, more general class based on common attributes
+- **Specialization**
+  - Create new classes from existing classes providing more specialized attributes or operations.
+
+```
+class Base {
+
+};
+
+class Derived: access-specifier Base {
+
+};
+```
+
+Access-specifier can be `public`, `private`, `protected`.
+
+- `public`
+  - Most commond
+  - is-a relationship
+- `private` and `protected`
+  - has-a relationship
+  - Different from composition
+
+`protected` class member modifier
+- Accessible from the Base class itself
+- Accessible from classes Derived from Base
+- Not accessible by objects of Base or Derived
+
+When a Derived object is created
+- Base class constructor executes
+- Then Derived class constructor executes
+
+Destructor
+- Class destructors are invoked in the reverse order as constructors
+- When a Derived object is destroyed,
+  - Derived class destructor executes
+  - Then Base class destructor executes
+- Each destructor should free resources allocated in it's own constructors
+
+A Derived class does NOT inherit
+- Base class constructors
+- Base class destructor
+- Base class overloaded assignment oeprators
+- Base class friend functions
+
+`using Base::Base;` anywhere in derived class declaration allows explicit inheritance of base 'non-special' constructors by C++11.
 
 `class Y:{visibility_specifier}X{...};` when `Y` is subclass and `X` is superclass.
 

@@ -58,3 +58,39 @@ Number Number::operator-(const Number &rhs) const;
 bool Number::operator==(const Number &rhs) const;
 bool Number::operator<(const Number &rhs) const;
 ```
+
+Overload **unary operators as global functions** (`++, --, -, !`).
+
+```
+ReturnType operatorOp(Type &obj);
+
+Number operator-(const Number &obj);
+Number operator++(Number &obj);       // pre-increment
+Number operator++(Number &obj, int);  // post-increment
+bool operator!(const Number &obj);
+```
+
+Overload **binary operators as global function** (`+, -, ==, !=, <, >`, etc)
+
+```
+ReturnType operatorOp(const Type &lfs, const Type &rhs);
+```
+
+Overload **stream insertion and extraction operators** (`<<`, `>>`)
+
+Return a reference to the `ostream` or `istream` so we can keep inserting but don't return `ostream` by value.
+
+```
+std::ostream &operator<<(std::ostream &os, const Type &obj) {
+  os << // Do something
+  return os;
+}
+
+std::istream &operator>>(std::istram &is, Type &obj) {
+  is >> // Do something
+  return is;
+}
+```
+
+
+
