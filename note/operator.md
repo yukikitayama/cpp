@@ -16,13 +16,26 @@ With chaining assignment statements, more than one variable can be assigned in a
 
 `res = counter++ + 10` is `res = counter + 10;` then `counter = counter + 1;` Postfix increment operator increments a variable **after** we use it.
 
+**Never use it twice for the same variable in the same statement!**. Behavior is undefined.
+
+## Equality oeprator and boolean
+
+```
+cout << (num1 == num2) << endl;  // 0 or 1
+cout << std::boolalpha;
+cout << (num1 == num2) << endl;  // true or false
+cout << std::noboolalpha;
+```
+
 ## Logical operator
 
-`!` is negation. `&&` is and. `||` is or.
+`!` (or `not`) is negation. `&&` (or `and`) is and. `||` (or `or`) is or.
 
 `!` has higher precedence than `&&`. `&&` has higher precedence than `||`.
 
 **Short-circuit evaluation** occurrs in C++. When evaluating a logical expression, C++ stops as soon as the result is known. For example, in `expr1 && expr2 && expr3`, if `expr1` is `false`, `expr2` and `expr3` are skipped, because, regardless of those values, the result is `false`.
+
+In `expr1 || expr2 || expr3`, if `expr1` is `true`, `expr2` and `expr3` are skipped. If `expr1` is `false`, then compiler continues to evaluate.
 
 ## Relational operator
 
@@ -35,6 +48,14 @@ https://stackoverflow.com/questions/47466358/what-is-the-spaceship-three-way-com
 `+=` is called **compound assignment operator**. `a += 1` is `a = a + 1`.
 
 `a *= b + c` (no need parenthesis) means `a = a * (b + c)`
+
+## Operator precedence
+
+**Associativity rule** appears when adjacent operators have the same precedence.
+
+If `op1` has associativity right to left, `expr1 op1 expr2 op1 expr3` first evaluates `expr2 op1 expr3` then `expr1`.
+
+`++`, `--`, `not`, `-(unary)`, `*(de-ref)`, `&`, `sizeof`, `=`, `op=` and `?:` are right to left associativity.
 
 ## Conditional operator
 

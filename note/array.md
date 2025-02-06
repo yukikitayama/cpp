@@ -4,7 +4,7 @@
 - All the elements of an array have the same type.
 - C doesn't allow the use of arrays with elements of various types (Python is okay).
 - Fixed size, once created, cannot change.
-- Stored contiguously in memory.
+- Stored **contiguously in memory**.
 - Very efficient
 
 Declaration is `element_type array_name [constant number of elements];`. `int numbers[5];`
