@@ -1,12 +1,21 @@
 # Switch
 
-The `break` statements are optional, but best practice is to include break statements for every `case` statement.
+The `break` statements are optional, but **best practice is to always include break statements for every `case` statement**.
 
 A switch statement can have a `default` case at the end that will execute when none of the cases is true. `break` statement is not needed in the `default` case. `default` statement is optional, but best practice is to include it.
 
 You can have multiple statements in `case` statement without a black `{ }`. If you need to declare variables in `case` statement, you need a block `{ }`.
 
 When you use `enum` for `switch` statement and if `case` statements don't handle all the values of `enum`, the compiler will warn you the missings. Quick workaround is to use `default` statement for non-covered `enum`.
+
+## Summary
+
+- The control expression must evaluate to an integer type
+- The case expressions must be constant expressions that evaluate to integer or integers literals
+- Once a match occurs all following case sections are executes until `break` is reached the switch complete.
+- **Best practice**
+  - Provide `break` statement for each `case`
+  - `default` is optional but should be handled
 
 ## How it works
 
