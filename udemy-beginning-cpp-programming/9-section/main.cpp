@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -142,15 +143,46 @@ int main() {
     // }
     // cout << num << " is " << ( (num % 2 == 0) ? "even" : "odd" ) << endl;;
 
-    int num1 {}, num2 {};
-    cout << "Enter 2 integers: ";
-    cin >> num1 >> num2;
-    if (num1 != num2) {
-        cout << "Largest: " << ( (num1 > num2) ? num1 : num2 ) << endl;
-        cout << "Smallest: " << ( (num1 > num2) ? num2 : num1 ) << endl;
-    } else {
-        cout << "The numbers are the same" << endl;
-    }
+    // int num1 {}, num2 {};
+    // cout << "Enter 2 integers: ";
+    // cin >> num1 >> num2;
+    // if (num1 != num2) {
+    //     cout << "Largest: " << ( (num1 > num2) ? num1 : num2 ) << endl;
+    //     cout << "Smallest: " << ( (num1 > num2) ? num2 : num1 ) << endl;
+    // } else {
+    //     cout << "The numbers are the same" << endl;
+    // }
 
+    // for (int i {1}; i <= 10; ++i) {
+    //     cout << i << endl;
+    // }
+    // for (int i {1}; i <= 10; i += 2) {
+    //     cout << i << endl;
+    // }
+    // for (int i {10}; i > 0; --i)
+    //     cout << i << endl;
+    // cout << "Hello" << endl;
+    // for (int i {10}; i <= 100; i += 10) {
+    //     if (i % 15 == 0)
+    //         cout << i << endl;
+    // }
+    // for (int i {1}, j {5}; i <= 5; ++i, ++j) {
+    //     cout << i << " + " << j << " = " << (i + j) << endl;
+    // }
+    // for (int i {1}; i <= 100; ++i) {
+    //     cout << i;
+    //     if (i % 10 == 0) {
+    //         cout << endl;
+    //     } else {
+    //         cout << " ";
+    //     }
+    // }
+    // for (int i {1}; i <= 100; ++i) {
+    //     cout << i << ( (i % 10 == 0) ? "\n" : " ");
+    // }
+    vector <int> nums {10, 20, 30, 40, 50};
+    for (unsigned i {0}; i < nums.size(); ++i) {
+        cout << nums[i] << endl;
+    }
     return 0;
 }
