@@ -180,9 +180,60 @@ int main() {
     // for (int i {1}; i <= 100; ++i) {
     //     cout << i << ( (i % 10 == 0) ? "\n" : " ");
     // }
-    vector <int> nums {10, 20, 30, 40, 50};
-    for (unsigned i {0}; i < nums.size(); ++i) {
-        cout << nums[i] << endl;
+    // vector <int> nums {10, 20, 30, 40, 50};
+    // for (unsigned i {0}; i < nums.size(); ++i) {
+    //     cout << nums[i] << endl;
+    // }
+
+    // int scores[] {10, 20, 30};
+    // for (auto score : scores)
+    //     cout << score << endl;
+    // vector<double> temperatures {87.9, 77.9, 80.0, 72.5};
+    // double average_temp {};
+    // double total {};
+    // for (auto temp : temperatures) {
+    //     total += temp;
+    // }
+    // average_temp = total / temperatures.size();
+    // cout << fixed << setprecision(1);
+    // cout << "Average temperature: " << average_temp << endl;
+    // for (auto val : {1, 2, 3, 4, 5}) {
+    //     cout << val << endl;
+    // }
+    // for (auto c : "Yuki Kitayama")
+    //     if (c == ' ')
+    //         cout << "\t";
+    //     else
+    //         cout << c;
+
+    // int num {};
+    // cout << "Enter positive integer";
+    // cin >> num;
+    // while (num > 0) {
+    //     cout << num << endl;
+    //     --num;
+    // }
+    // cout << "End" << endl;
+    // int num {};
+    // cout << "Enter: ";
+    // cin >> num;
+    // while (num >= 100) {
+    //     cout << "Enter: ";
+    //     cin >> num;
+    // }
+    // cout << "Thanks" << endl;
+    bool done {false};
+    int num {0};
+    while (!done) {
+        cout << "Enter:";
+        cin >> num;
+        if (num <= 1 || num >= 5) {
+            cout << "Again" << endl;
+        } else {
+            cout << "Thanks" << endl;
+            done = true;
+        }
     }
+
     return 0;
 }
