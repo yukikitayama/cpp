@@ -4,7 +4,29 @@
 
 using namespace std;
 
-int main() {
+// void find_first_vowel(const std::vector<char>& vec) {
+//     //---- WRITE YOUR CODE BELOW THIS LINE----
+//     int i = 0;
+
+//     if (vec.size() == 0) {
+//         cout << "No vowel was found";
+//         return;
+//     }
+
+//     do {
+//         if (vec.at(i) == 'a' || vec.at(i) == 'e' || vec.at(i) == 'i' || vec.at(i) == 'o' || vec.at(i) == 'u') {
+//             cout << "Vowel found: " << vec.at(i);
+//             return;
+//         }
+//         ++i;
+//     } while (i < vec.size());
+
+//     cout << "No vowel was found";
+//     //---- WRITE YOUR CODE ABOVE THIS LINE----
+// }
+
+int main()
+{
     // int num {};
     // const int min {10};
     // const int max {100};
@@ -95,7 +117,7 @@ int main() {
 
     //     cout << fixed << setprecision(2);
     //     cout << "The volume of your package is: " << package_volume << endl;
-    //     cout << "Your package will cost $" << package_cost << " to ship" << endl;   
+    //     cout << "Your package will cost $" << package_cost << " to ship" << endl;
     // }
 
     // char letter_grade {};
@@ -222,17 +244,76 @@ int main() {
     //     cin >> num;
     // }
     // cout << "Thanks" << endl;
-    bool done {false};
-    int num {0};
-    while (!done) {
-        cout << "Enter:";
-        cin >> num;
-        if (num <= 1 || num >= 5) {
-            cout << "Again" << endl;
-        } else {
-            cout << "Thanks" << endl;
-            done = true;
+    // bool done {false};
+    // int num {0};
+    // while (!done) {
+    //     cout << "Enter:";
+    //     cin >> num;
+    //     if (num <= 1 || num >= 5) {
+    //         cout << "Again" << endl;
+    //     } else {
+    //         cout << "Thanks" << endl;
+    //         done = true;
+    //     }
+    // }
+
+    // char selection {};
+    // do {
+    //     cout << "--------------" <<endl;
+    //     cout << "1. Do this" << endl;
+    //     cout << "2. Do that" << endl;
+    //     cout << "3. Do something else" << endl;
+    //     cout << "Q. Quit" << endl;
+    //     cout << "Enter your selection: ";
+    //     cin >> selection;
+
+    //     if (selection == '1')
+    //         cout << "Doing this" << endl;
+    //     else if (selection == '2')
+    //         cout << "Doing that" << endl;
+    //     else if (selection == '3')
+    //         cout << "Doing something else" << endl;
+    //     else if (selection == 'q' || selection == 'Q')
+    //         cout << "Goodbye..." << endl;
+    //     else
+    //         cout << "Unknown option, try again..." << endl;
+
+    // } while (selection != 'q' && selection != 'Q');
+
+    // for (int num1 {1}; num1 <= 10; ++num1) {
+    //     for (int num2 {1}; num2 <= 10; ++num2) {
+    //         cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+    //     }
+    //     cout << "----------" << endl;
+    // }
+
+    int num_items{};
+    cout << "How many items: ";
+    cin >> num_items;
+    vector<int> data{};
+    for (int i{1}; i <= num_items; ++i)
+    {
+        int data_item{};
+        cout << "Data item " << i << ": ";
+        cin >> data_item;
+        data.push_back(data_item);
+    }
+
+    cout << "\nDisplay Histogram" << endl;
+    for (auto val : data)
+    {
+        for (int i{1}; i <= val; ++i)
+        {
+            if (i % 5 == 0)
+            {
+                cout << "*";
+            }
+            else
+            {
+                cout << "-";
+            }
         }
+        cout << endl;
     }
 
     return 0;
