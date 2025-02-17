@@ -287,34 +287,77 @@ int main()
     //     cout << "----------" << endl;
     // }
 
-    int num_items{};
-    cout << "How many items: ";
-    cin >> num_items;
-    vector<int> data{};
-    for (int i{1}; i <= num_items; ++i)
-    {
-        int data_item{};
-        cout << "Data item " << i << ": ";
-        cin >> data_item;
-        data.push_back(data_item);
-    }
+    // int num_items{};
+    // cout << "How many items: ";
+    // cin >> num_items;
+    // vector<int> data{};
+    // for (int i{1}; i <= num_items; ++i)
+    // {
+    //     int data_item{};
+    //     cout << "Data item " << i << ": ";
+    //     cin >> data_item;
+    //     data.push_back(data_item);
+    // }
 
-    cout << "\nDisplay Histogram" << endl;
-    for (auto val : data)
-    {
-        for (int i{1}; i <= val; ++i)
-        {
-            if (i % 5 == 0)
-            {
-                cout << "*";
+    // cout << "\nDisplay Histogram" << endl;
+    // for (auto val : data)
+    // {
+    //     for (int i{1}; i <= val; ++i)
+    //     {
+    //         if (i % 5 == 0)
+    //         {
+    //             cout << "*";
+    //         }
+    //         else
+    //         {
+    //             cout << "-";
+    //         }
+    //     }
+    //     cout << endl;
+    // }
+
+    vector<int> numbers {};
+    char selection {};
+
+    do {
+        // Display menu
+        cout << "P - Print numbers" << endl;
+        cout << "A - Add a number" << endl;
+        cout << "M - Display mean" << endl;
+        cout << "S - Display smallest" << endl;
+        cout << "L - Display largest" << endl;
+        cout << "Q - Quit" << endl;
+        cout << "Enter your choice: ";
+        cin >> selection;
+
+        if (selection == 'P' || selection == 'p') {
+            if (numbers.size() == 0)
+                cout << "[] - list is empty" << endl;
+            else {
+                cout << "[ ";
+                for (auto num : numbers)
+                    cout << num << " ";
+                cout << "]" << endl;
             }
-            else
-            {
-                cout << "-";
+        } else if (selection == 'A' || selection == 'a') {
+            int num_to_add {};
+            cout << "Enter an integer to add to the list: ";
+            cin >> num_to_add;
+            numbers.push_back(num_to_add);
+            cout << num_to_add << " added" << endl;
+        } else if (selection == 'M' || selection == 'm') {
+            if (numbers.size() == 0)
+                cout << "Unable to calculate mean - no data" << endl;
+            else {
+                int total {};
+                for (auto num : numbers) {
+                    total += num;
+                }
+                cout << "The mean is: " << static_cast<double>(total) / numbers.size() << endl;
             }
         }
-        cout << endl;
-    }
+
+    } while (selection != 'q' && selection != 'Q');
 
     return 0;
 }
