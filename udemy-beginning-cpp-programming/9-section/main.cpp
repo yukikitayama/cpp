@@ -355,6 +355,30 @@ int main()
                 }
                 cout << "The mean is: " << static_cast<double>(total) / numbers.size() << endl;
             }
+        } else if (selection == 'S' || selection == 's') {
+            if (numbers.size() == 0)
+                cout << "Unable to determine the smallest - no data" << endl;
+            else {
+                int smallest = numbers.at(0);
+                for (auto num : numbers)
+                    if (num < smallest)
+                        smallest = num;
+                cout << "Smallest number is: " << smallest << endl;
+            }
+        } else if (selection == 'L' || selection == 'l') {
+            if (numbers.size() == 0)
+                cout << "Unable to determine the largest - no data" << endl;
+            else {
+                int largest = numbers.at(0);
+                for (auto num : numbers)
+                    if (num > largest)
+                        largest = num;
+                cout << "Largest number is: " << largest << endl;
+            }
+        } else if (selection == 'Q' || selection == 'q') {
+            cout << "Goodbye" << endl;
+        } else {
+            cout << "Unknown selection, please try again" << endl;
         }
 
     } while (selection != 'q' && selection != 'Q');
