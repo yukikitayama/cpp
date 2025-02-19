@@ -1,5 +1,40 @@
 # String
 
+`#include <cctype>` needs for functions for testing characters and converting character case.
+- `isalpha(c)`
+- `isalnum(c)`
+- `isdigit(c)`
+- `tolower(c)`
+- `toupper(c)`
+
+## C-style string
+
+**C-style string** is
+- Sequence of characters
+- Contiguously stored in memory, and implemented as an array of characters
+- Terminated by a **null character**.
+- **String literal** is also C-style string
+  - Hard-code supply of characters in double quotes. e.g., "Yuki"
+  - Constant
+  - Automatically a null character is added at the end for termination.
+- `"Yuki K"` is stored as `{'Y', 'u', 'k', 'i', ' ', 'K', '\0'}`
+- Declaring C-style string `char name[] {"Yuki"};` gives us `{'Y', 'u', 'k', 'i', '\0'}`.
+- `char name[7] {"Yuki"};` gives us `{'Y', 'u', 'k', 'i', '\0', '\0', '\0'}`.
+  - `name[5] = 'K'` gives us `{'Y', 'u', 'k', 'i', 'K', '\0', '\0'}`.
+
+`#include <cstring>`
+- `strlen()`
+- Copy
+  - `strcpy()`
+- Concatenate
+  - `strcat()`
+- Compare
+  - `strcmp()`
+- Search
+
+`#include <cstdlib>`
+- Functions to convert C-style strings to integer, float, long, etc.
+
 `str::string` is a Class in the **Standard Template Library**. C++ string has dynamic size at runtime, while C-style is fixed size.
 
 C++ string can be converted to C-style string.
