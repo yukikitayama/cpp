@@ -35,11 +35,15 @@
 `#include <cstdlib>`
 - Functions to convert C-style strings to integer, float, long, etc.
 
+## C++ string
+
+- Use `#include <string>` and `using namespace std;` together to use C++ string.
+- contiguous in memory
+- dynamic size
+- work with input and output streams
+- C++ string can be converted to C-style string.
+
 `str::string` is a Class in the **Standard Template Library**. C++ string has dynamic size at runtime, while C-style is fixed size.
-
-C++ string can be converted to C-style string.
-
-Use `#include <string>` and `using namespace std;` together to use C++ string.
 
 Declaring and initializing
 ```
@@ -56,6 +60,14 @@ sentence = "C++" + " is powerful"; // Illegal
 ```
 
 **Range-based for loop** can work for C++ string.
+
+C++ string functions
+- `substr()`
+- `find()`
+- `erase()`
+- `clear()`
+- `length()`
+- `getline()` reads entire line until `\n`
 
 `string::npos` no position information available
 ```
