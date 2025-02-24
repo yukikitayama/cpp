@@ -64,25 +64,25 @@ int main()
     // int whole_name_length = strlen(whole_name);
     // cout << "The length of the first name, " << first_name << ", is " << first_name_length << " letters long and the length of the last name, " << last_name << ", is " << last_name_length << " letters long. This means that the length of the whole name must be " << whole_name_length << " letters long.";
 
-    string s0;
-    string s1 {"Apple"};
-    string s2 {"Banana"};
-    string s3 {"Kiwi"};
-    string s4 {"apple"};
-    string s5 {s1};  // Copy
-    string s6 {s1, 0, 3};
-    string s7 (10, 'X');  // Constructor style
-    cout << s0 << endl;
-    cout << s0.length() << endl;
-    // Initialization
-    cout << "s1 is initialized to: " << s1 << endl;
-    cout << "s2 is initialized to: " << s2 << endl;
-    cout << "s3 is initialized to: " << s3 << endl;
-    cout << "s4 is initialized to: " << s4 << endl;
-    cout << "s5 is initialized to: " << s5 << endl;
-    cout << "s6 is initialized to: " << s6 << endl;
-    cout << "s7 is initialized to: " << s7 << endl;
-    cout << boolalpha;
+    // string s0;
+    // string s1 {"Apple"};
+    // string s2 {"Banana"};
+    // string s3 {"Kiwi"};
+    // string s4 {"apple"};
+    // string s5 {s1};  // Copy
+    // string s6 {s1, 0, 3};
+    // string s7 (10, 'X');  // Constructor style
+    // cout << s0 << endl;
+    // cout << s0.length() << endl;
+    // // Initialization
+    // cout << "s1 is initialized to: " << s1 << endl;
+    // cout << "s2 is initialized to: " << s2 << endl;
+    // cout << "s3 is initialized to: " << s3 << endl;
+    // cout << "s4 is initialized to: " << s4 << endl;
+    // cout << "s5 is initialized to: " << s5 << endl;
+    // cout << "s6 is initialized to: " << s6 << endl;
+    // cout << "s7 is initialized to: " << s7 << endl;
+    // cout << boolalpha;
     // cout << s1 << " == " << s5 << ": " << (s1 == s5) << endl;  // T
     // cout << s1 << " == " << s2 << ": " << (s1 == s2) << endl;  // F
     // cout << s1 << " != " << s2 << ": " << (s1 != s2) << endl;  // T
@@ -130,15 +130,46 @@ int main()
     // cout << "Full name: ";
     // getline(cin, full_name);
     // cout << "Full name is: " << full_name << endl;
-    s1 = "The secret word is Boo";
-    string word {};
-    cout << "Enter the word to find: ";
-    cin >> word;
-    size_t position = s1.find(word);
-    if (position != string::npos)
-        cout << "Found " << word << " at position: " << position << endl;
-    else
-        cout << "Sorry, " << word << " not found" << endl;    
+    // s1 = "The secret word is Boo";
+    // string word {};
+    // cout << "Enter the word to find: ";
+    // cin >> word;
+    // size_t position = s1.find(word);
+    // if (position != string::npos)
+    //     cout << "Found " << word << " at position: " << position << endl;
+    // else
+    //     cout << "Sorry, " << word << " not found" << endl;    
 
+    string alphabet {"[ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    string key  {" [XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
+
+    string secret_message {};
+    cout << "Enter your secret message: ";
+    getline(cin, secret_message);
+
+    string encrypted_message {};
+    cout << "Encrypting message..." << endl;
+    for (char c : secret_message) {
+        size_t position = alphabet.find(c);
+        if (position != string::npos) {
+            char new_character {key.at(position)};
+            encrypted_message += new_character;
+        } else {
+            encrypted_message += c;
+        }
+    }
+    cout << "Encrypted message: " << encrypted_message << endl;
+    string decrypted_message {};
+    cout << "Decrypting message..." << endl;
+    for (char c : encrypted_message) {
+        size_t position = key.find(c);
+        if (position != string::npos) {
+            char new_char {alphabet.at(position)};
+            decrypted_message += new_char;
+        } else {
+            decrypted_message += c;
+        }
+    }
+    cout << "Decrypted message: " << decrypted_message << endl;
     return 0;
 }
