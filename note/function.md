@@ -228,3 +228,5 @@ Consideration by
 - Parameters' type
 
 The `return` type isn't taken into consideration.
+
+`<cmath>` contains common mathematical calculations
