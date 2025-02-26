@@ -229,4 +229,5 @@ Consideration by
 
 The `return` type isn't taken into consideration.
 
-`<cmath>` contains common mathematical calculations
+- `<cmath>` contains common mathematical calculations
+- Compiler must know the function details before it is called, without prototype
