@@ -1,8 +1,14 @@
 # Function
 
-Without **function prototype**, compiler must know the function details before it is called. It means you cannot define function below the line of calling the function.
+## Function prototylpe
 
-**Function prototype** tells the compiler what it needs to know without a full function definition. It's also called **forward declarations**. Place functions prototypes at the beginning of the program. Function prototypes are also used in **header files**. Semi-colon at the end. The compiler only cares about the types of argument and return. Argument of prototype is fine with only argument type, not with argument names.
+- Without **function prototype**, compiler must know the function details before it is called. 
+- It means you cannot define function below the line of calling the function.
+- **Function prototype** tells the compiler what it needs to know without a full function definition. 
+- It's also called **forward declarations**. Place functions prototypes at the beginning of the program. 
+- Function prototypes are also used in **header files**. Semi-colon at the end. 
+- The compiler only cares about the types of argument and return. 
+- Argument of prototype is fine with only argument type, not with argument names.
 
 ```
 int function_name(); // prototype
