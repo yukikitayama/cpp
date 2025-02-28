@@ -1,6 +1,6 @@
 # Function
 
-## Function prototylpe
+## Function prototype
 
 - Without **function prototype**, compiler must know the function details before it is called. 
 - It means you cannot define function below the line of calling the function.
