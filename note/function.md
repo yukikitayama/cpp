@@ -39,7 +39,10 @@ The data to be passed to a function
 
 **Actual parameters** are the parameters used in the function call ("the arguments").
 
-**Default argument values** can be in the prototype or definition, **not both**. Best practice is in the prototype. It must appear at the **tail end of the parameter list**.
+**Default argument values**
+- can be in the prototype or definition, but **not both**. 
+- Best practice is in the prototype. 
+- It must appear at the **tail end of the parameter list**.
 
 C++ allows us to create overload functions which are functions that have different parameter lists but have the same name. It's a type of abstraction and a type of **polymorphism** meaning many forms with the same concept. **Return type is not considered**. Overloaded functions with default arguments could trigger ambiguous call of the function, so need to be careful.
 
