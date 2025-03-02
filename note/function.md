@@ -44,7 +44,12 @@ The data to be passed to a function
 - Best practice is in the prototype. 
 - It must appear at the **tail end of the parameter list**.
 
-C++ allows us to create overload functions which are functions that have different parameter lists but have the same name. It's a type of abstraction and a type of **polymorphism** meaning many forms with the same concept. **Return type is not considered**. Overloaded functions with default arguments could trigger ambiguous call of the function, so need to be careful.
+**Overloading functions**
+- C++ allows us to create overload functions which are functions that have different parameter lists but have the same name. 
+- It's a type of abstraction and a type of **polymorphism** meaning many forms with the same concept. 
+- **Return type is not considered**.
+  - `int get_value();` and `double get_value();` produce compiler error.
+- Overloaded functions with default arguments could trigger ambiguous call of the function, so need to be careful.
 
 Passing arrays to functions needs to provide **square brackets** in the formal parameter description. **The array elements are not copied**, because the array name evaluates to the location of the array in memory - this address is what is copied. The function has no idea how many elements are in the array since all it knows is the location of the first element (the name of the array). Since it's passing the location of the array, the function can modify the actual array. `const` parameters (e.g. `const int nums []`) can tell the compiler that function parameters are const (read-only). If a function attempts to modify the array, it will result in a compiler error.
 

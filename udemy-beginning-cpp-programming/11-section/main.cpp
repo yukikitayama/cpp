@@ -7,14 +7,14 @@
 
 using namespace std;
 
-double calc_volume_cylinder(double, double);
-double calc_area_circle(double);
-void area_circle();
-void volume_cylinder();
-void pass_by_value1(int num);
-void pass_by_value2(string s);
-void pass_by_value3(vector<string> v);
-void print_vector(vector<string> v);
+// double calc_volume_cylinder(double, double);
+// double calc_area_circle(double);
+// void area_circle();
+// void volume_cylinder();
+// void pass_by_value1(int num);
+// void pass_by_value2(string s);
+// void pass_by_value3(vector<string> v);
+// void print_vector(vector<string> v);
 
 // void pass_by_value1(int num) {
 //     num = 1000;
@@ -36,16 +36,45 @@ void print_vector(vector<string> v);
 
 // const double pi {3.14159};
 
-double calc_cost(double = 100, double = 0.06, double = 3.5);
+// double calc_cost(double = 100, double = 0.06, double = 3.5);
 
-void greeting(string name, string prefix = "Mr.", string suffix ="");
+// void greeting(string name, string prefix = "Mr.", string suffix ="");
 
-double calc_cost(double base_cost, double tax_rate, double shipping) {
-    return base_cost += (base_cost * tax_rate) + shipping;
+// double calc_cost(double base_cost, double tax_rate, double shipping) {
+//     return base_cost += (base_cost * tax_rate) + shipping;
+// }
+
+// void greeting(string name, string prefix, string suffix) {
+//     cout << "Hello " << prefix + " " + name + " " + suffix << endl;
+// }
+
+void print(int);
+void print(double = 125.5);
+void print(string);
+void print(string, string);
+void print(vector<string>);
+
+void print(int num) {
+    cout << "Printing int: " << num << endl;
 }
 
-void greeting(string name, string prefix, string suffix) {
-    cout << "Hello " << prefix + " " + name + " " + suffix << endl;
+void print(double num) {
+    cout << "Printing double: " << num << endl;
+}
+
+void print(string s) {
+    cout << "Printing string: " << s << endl;
+}
+
+void print(string s, string t) {
+    cout << "Printing 2 strings: " << s << " and " << t << endl;
+}
+
+void print(vector<string> v) {
+    cout << "Printing vector of strings: ";
+    for (auto s : v)
+        cout << s + " ";
+    cout << endl;
 }
 
 int main() {
@@ -88,20 +117,32 @@ int main() {
     // cout << "stooges after calling pass_by_value3: ";
     // print_vector(stooges);
 
-    double cost {0};
-    cost = calc_cost(100.0, 0.08, 4.25);
-    cout << fixed << setprecision(2);
-    cout << "Cost is: " << cost << endl;
-    cost = calc_cost(100.0, 0.08);
-    cout << "Cost is: " << cost << endl;
-    cost = calc_cost(200.0);
-    cout << "Cost is: " << cost << endl;
-    cost = calc_cost();
-    cout << "Cost is: " << cost << endl;
-    greeting("Glenn Jones", "Dr.", "M.D.");
-    greeting("James Rogers", "Professor", "Ph.D.");
-    greeting("Frank Miller", "Dr.");
-    greeting("William Smith");
+    // double cost {0};
+    // cost = calc_cost(100.0, 0.08, 4.25);
+    // cout << fixed << setprecision(2);
+    // cout << "Cost is: " << cost << endl;
+    // cost = calc_cost(100.0, 0.08);
+    // cout << "Cost is: " << cost << endl;
+    // cost = calc_cost(200.0);
+    // cout << "Cost is: " << cost << endl;
+    // cost = calc_cost();
+    // cout << "Cost is: " << cost << endl;
+    // greeting("Glenn Jones", "Dr.", "M.D.");
+    // greeting("James Rogers", "Professor", "Ph.D.");
+    // greeting("Frank Miller", "Dr.");
+    // greeting("William Smith");
+
+    print();
+    print(100);
+    print('A');
+    print(100.0);
+    print(123.3F);
+    print("C-style string");
+    string s {"C++ string"};
+    print(s);
+    print("C-style string", s);
+    vector<string> three_stooges {"Larry", "Moe", "Curly"};
+    print(three_stooges);
 
     return 0;
 }
