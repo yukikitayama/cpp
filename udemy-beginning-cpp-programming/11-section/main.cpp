@@ -77,18 +77,41 @@ using namespace std;
 //     cout << endl;
 // }
 
-void print_array(const int arr[], size_t size);
-void set_array(int arr[], size_t size, int value);
+// void print_array(const int arr[], size_t size);
+// void set_array(int arr[], size_t size, int value);
 
-void print_array(const int arr[], size_t size) {
-    for (size_t i {0}; i < size; ++i)
-        cout << arr[i] << " ";
-    cout << endl;
+// void print_array(const int arr[], size_t size) {
+//     for (size_t i {0}; i < size; ++i)
+//         cout << arr[i] << " ";
+//     cout << endl;
+// }
+
+// void set_array(int arr[], size_t size, int value) {
+//     for (size_t i {0}; i < size; ++i)
+//         arr[i] = value;
+// }
+
+void pass_by_ref1(int &num);
+void pass_by_ref2(string &s);
+void pass_by_ref3(vector<string> &v);
+void print_vector(const vector<string> &v);
+
+void pass_by_ref1(int &num) {
+    num = 1000;
 }
 
-void set_array(int arr[], size_t size, int value) {
-    for (size_t i {0}; i < size; ++i)
-        arr[i] = value;
+void pass_by_ref2(string &s) {
+    s = "Changed";
+}
+
+void pass_by_ref3(vector<string> &v) {
+    v.clear();
+}
+
+void print_vector(const vector<string> &v) {
+    for (auto s : v)
+        cout << s << " ";
+    cout << endl;
 }
 
 int main() {
@@ -158,11 +181,33 @@ int main() {
     // vector<string> three_stooges {"Larry", "Moe", "Curly"};
     // print(three_stooges);
 
-    int my_scores[] {100, 98, 90, 86, 84};
-    print_array(my_scores, 5);
-    set_array(my_scores, 5, 100);
-    print_array(my_scores, 5);
+    // int my_scores[] {100, 98, 90, 86, 84};
     // print_array(my_scores, 5);
+    // set_array(my_scores, 5, 100);
+    // print_array(my_scores, 5);
+    // print_array(my_scores, 5);
+
+    int num {10};
+    int another_num {20};
+    cout << "num before calling pass_by_ref1: " << num << endl;
+    pass_by_ref1(num);
+    cout << "num after calling pass_by_ref1: " << num << endl;
+
+    cout << "another_num before calling pass_by_ref1: " << another_num << endl;
+    pass_by_ref1(another_num);
+    cout << "another_num after calling pass_by_ref1: " << another_num << endl;
+
+    string name {"Frank"};
+    cout << "name before: " << name << endl;
+    pass_by_ref2(name);
+    cout << "name after: " << name << endl;
+
+    vector<string> stooges {"A", "B", "C"};
+    cout << "before: ";
+    print_vector(stooges);
+    pass_by_ref3(stooges);
+    cout << "after: ";
+    print_vector(stooges);
 
     return 0;
 }
