@@ -91,27 +91,49 @@ using namespace std;
 //         arr[i] = value;
 // }
 
-void pass_by_ref1(int &num);
-void pass_by_ref2(string &s);
-void pass_by_ref3(vector<string> &v);
-void print_vector(const vector<string> &v);
+// void pass_by_ref1(int &num);
+// void pass_by_ref2(string &s);
+// void pass_by_ref3(vector<string> &v);
+// void print_vector(const vector<string> &v);
 
-void pass_by_ref1(int &num) {
-    num = 1000;
+// void pass_by_ref1(int &num) {
+//     num = 1000;
+// }
+
+// void pass_by_ref2(string &s) {
+//     s = "Changed";
+// }
+
+// void pass_by_ref3(vector<string> &v) {
+//     v.clear();
+// }
+
+// void print_vector(const vector<string> &v) {
+//     for (auto s : v)
+//         cout << s << " ";
+//     cout << endl;
+// }
+
+int num {300};
+
+void global_example() {
+    cout << "Global num is: " << num << " in global_example - start" << endl;
+    num *= 2;
+    cout << "Global num is: " << num << " in global_example - end" << endl;
 }
 
-void pass_by_ref2(string &s) {
-    s = "Changed";
+void local_example(int x) {
+    int num {1000};
+    cout << "Local num is: " << num << " in local_example - start" << endl;
+    num = x;
+    cout << "Local num is: " << num << " in local_example - end" << endl;
 }
 
-void pass_by_ref3(vector<string> &v) {
-    v.clear();
-}
-
-void print_vector(const vector<string> &v) {
-    for (auto s : v)
-        cout << s << " ";
-    cout << endl;
+void static_local_example() {
+    static int num {5000};
+    cout << "Local static num is: " << num << " in static_local_example - start" << endl;
+    num += 1000;
+    cout << "Local static num is: " << num << " in static_local_example - end" << endl;
 }
 
 int main() {
@@ -187,27 +209,49 @@ int main() {
     // print_array(my_scores, 5);
     // print_array(my_scores, 5);
 
-    int num {10};
-    int another_num {20};
-    cout << "num before calling pass_by_ref1: " << num << endl;
-    pass_by_ref1(num);
-    cout << "num after calling pass_by_ref1: " << num << endl;
+    // int num {10};
+    // int another_num {20};
+    // cout << "num before calling pass_by_ref1: " << num << endl;
+    // pass_by_ref1(num);
+    // cout << "num after calling pass_by_ref1: " << num << endl;
 
-    cout << "another_num before calling pass_by_ref1: " << another_num << endl;
-    pass_by_ref1(another_num);
-    cout << "another_num after calling pass_by_ref1: " << another_num << endl;
+    // cout << "another_num before calling pass_by_ref1: " << another_num << endl;
+    // pass_by_ref1(another_num);
+    // cout << "another_num after calling pass_by_ref1: " << another_num << endl;
 
-    string name {"Frank"};
-    cout << "name before: " << name << endl;
-    pass_by_ref2(name);
-    cout << "name after: " << name << endl;
+    // string name {"Frank"};
+    // cout << "name before: " << name << endl;
+    // pass_by_ref2(name);
+    // cout << "name after: " << name << endl;
 
-    vector<string> stooges {"A", "B", "C"};
-    cout << "before: ";
-    print_vector(stooges);
-    pass_by_ref3(stooges);
-    cout << "after: ";
-    print_vector(stooges);
+    // vector<string> stooges {"A", "B", "C"};
+    // cout << "before: ";
+    // print_vector(stooges);
+    // pass_by_ref3(stooges);
+    // cout << "after: ";
+    // print_vector(stooges);
+
+    int num {100};
+    int num1 {500};
+    cout << "Local num is: " << num << " in main" << endl;
+
+    {
+        int num {200};
+        cout << "Local num is: " << num << " in inner block in main" << endl;
+        cout << "Inner block in main can see out - num1 is: " << num1 << endl;
+    }
+
+    cout << "Local num is: " << num << " in main" << endl;
+
+    local_example(10);
+    local_example(20);
+
+    global_example();
+    global_example();
+
+    static_local_example();
+    static_local_example();
+    static_local_example();
 
     return 0;
 }

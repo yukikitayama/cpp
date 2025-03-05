@@ -73,8 +73,10 @@ Pass by reference
   - e.g. When we pass a huge vector to a function, passing reference to the vector is efficient, because the pass-by-value instead makes copy and allocate memory before running a function.
 
 Scope rules
-
-C++ uses static or lexical scoping, meaning the scope is determined in the order of the code lines. C++ has 2 scopes; Local scope (Block scope) or global scope.
+- C++ uses static or lexical scoping, meaning the scope is determined in the order of the code lines. 
+- C++ has 2 scopes; 
+  - Local scope (Block scope) 
+  - or global scope.
 
 Local scope (Block scope)
 - Identifiers declared in block `{}`.
