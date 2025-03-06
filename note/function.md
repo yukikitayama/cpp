@@ -95,17 +95,20 @@ Global scope
 - Global constants are ok.
 - **Best practice is don't use global variables**.
 
-**Function call stack** is Last In First Out, push and pop.
-
-**Stack frame (activation record)**
+Function call stack
+- Functions use **Function call stack**
+- It is Last In First Out, push and pop.
+- **Stack frame (activation record)** is each element in function call stack.
 - Functions return control to functions that called it
 - Each time, a new activation record is created and push it on stack
 - When a function terminate, the activation record is popped and return.
 - Local variables and function parameters are allocated on the stack
 - Stack size is finite, so if exceeds, **stack overflow**.
 
-**Inline function** `inline`
+Inline function
+- **Inline function** `inline`
 - Avoid **function call overhead**
+- Generate inline assembly code
 - Generally faster
 - Could cause code bloat
 - Compilers optimizations are very sophisticated, so it will likely inline even without your suggestion, so no need to worry about too much.
