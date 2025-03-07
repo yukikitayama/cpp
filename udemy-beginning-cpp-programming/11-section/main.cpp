@@ -114,26 +114,42 @@ using namespace std;
 //     cout << endl;
 // }
 
-int num {300};
+// int num {300};
 
-void global_example() {
-    cout << "Global num is: " << num << " in global_example - start" << endl;
-    num *= 2;
-    cout << "Global num is: " << num << " in global_example - end" << endl;
+// void global_example() {
+//     cout << "Global num is: " << num << " in global_example - start" << endl;
+//     num *= 2;
+//     cout << "Global num is: " << num << " in global_example - end" << endl;
+// }
+
+// void local_example(int x) {
+//     int num {1000};
+//     cout << "Local num is: " << num << " in local_example - start" << endl;
+//     num = x;
+//     cout << "Local num is: " << num << " in local_example - end" << endl;
+// }
+
+// void static_local_example() {
+//     static int num {5000};
+//     cout << "Local static num is: " << num << " in static_local_example - start" << endl;
+//     num += 1000;
+//     cout << "Local static num is: " << num << " in static_local_example - end" << endl;
+// }
+
+unsigned long long fibonacci(unsigned long long n);
+
+unsigned long long fibonacci(unsigned long long n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-void local_example(int x) {
-    int num {1000};
-    cout << "Local num is: " << num << " in local_example - start" << endl;
-    num = x;
-    cout << "Local num is: " << num << " in local_example - end" << endl;
-}
+unsigned long long factorial(unsigned long long);
 
-void static_local_example() {
-    static int num {5000};
-    cout << "Local static num is: " << num << " in static_local_example - start" << endl;
-    num += 1000;
-    cout << "Local static num is: " << num << " in static_local_example - end" << endl;
+unsigned long long factorial(unsigned long long n) {
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
 }
 
 int main() {
@@ -231,27 +247,32 @@ int main() {
     // cout << "after: ";
     // print_vector(stooges);
 
-    int num {100};
-    int num1 {500};
-    cout << "Local num is: " << num << " in main" << endl;
+    // int num {100};
+    // int num1 {500};
+    // cout << "Local num is: " << num << " in main" << endl;
 
-    {
-        int num {200};
-        cout << "Local num is: " << num << " in inner block in main" << endl;
-        cout << "Inner block in main can see out - num1 is: " << num1 << endl;
-    }
+    // {
+    //     int num {200};
+    //     cout << "Local num is: " << num << " in inner block in main" << endl;
+    //     cout << "Inner block in main can see out - num1 is: " << num1 << endl;
+    // }
 
-    cout << "Local num is: " << num << " in main" << endl;
+    // cout << "Local num is: " << num << " in main" << endl;
 
-    local_example(10);
-    local_example(20);
+    // local_example(10);
+    // local_example(20);
 
-    global_example();
-    global_example();
+    // global_example();
+    // global_example();
 
-    static_local_example();
-    static_local_example();
-    static_local_example();
+    // static_local_example();
+    // static_local_example();
+    // static_local_example();
+
+    cout << fibonacci(5) << endl;  // 5
+    cout << fibonacci(30) << endl;  // 832040
+    cout << factorial(3) << endl;  // 6
+    cout << factorial(8) << endl;  // 40320
 
     return 0;
 }
