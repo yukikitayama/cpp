@@ -136,21 +136,31 @@ using namespace std;
 //     cout << "Local static num is: " << num << " in static_local_example - end" << endl;
 // }
 
-unsigned long long fibonacci(unsigned long long n);
+// unsigned long long fibonacci(unsigned long long n);
 
-unsigned long long fibonacci(unsigned long long n) {
-    if (n <= 1)
-        return n;
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
+// unsigned long long fibonacci(unsigned long long n) {
+//     if (n <= 1)
+//         return n;
+//     return fibonacci(n - 1) + fibonacci(n - 2);
+// }
 
-unsigned long long factorial(unsigned long long);
+// unsigned long long factorial(unsigned long long);
 
-unsigned long long factorial(unsigned long long n) {
-    if (n == 0)
-        return 1;
-    return n * factorial(n - 1);
-}
+// unsigned long long factorial(unsigned long long n) {
+//     if (n == 0)
+//         return 1;
+//     return n * factorial(n - 1);
+// }
+
+// double a_penny_doubled_everyday(int, double);
+
+// double a_penny_doubled_everyday(int n, double p) {
+//     if (n == 1) {
+//         return p;
+//     }
+
+//     return a_penny_doubled_everyday(n - 1, p * 2);
+// }
 
 int main() {
     // double num {};
@@ -269,12 +279,80 @@ int main() {
     // static_local_example();
     // static_local_example();
 
-    cout << fibonacci(5) << endl;  // 5
-    cout << fibonacci(30) << endl;  // 832040
-    cout << factorial(3) << endl;  // 6
-    cout << factorial(8) << endl;  // 40320
+    // cout << fibonacci(5) << endl;  // 5
+    // cout << fibonacci(30) << endl;  // 832040
+    // cout << factorial(3) << endl;  // 6
+    // cout << factorial(8) << endl;  // 40320
+
+    // double total_amount = a_penny_doubled_everyday(18, 0.01);
+    // cout << "total_amount: " << total_amount << endl;
+
+    vector<int> numbers;
+    char selection {};
+
+    do {
+        display_menu();
+        selection = get_selection();
+        switch(selection) {
+            case 'P':
+                handle_display(numbers);
+                break;
+            case 'A':
+                handle_add(numbers);
+                break;
+            case 'M':
+                handle_mean(numbers);
+                break;
+            case 'S':
+                handle_smallest(numbers);
+                break;
+            case 'L':
+                handle_largest(numbers);
+                break;
+            case 'Q':
+                handle_quit();
+                break;
+            default:
+                handle_unknown();
+        }
+    } while (selection != 'Q');
+    cout << endl;
+
+    // Check from 5:00 / 16:01 of 115. Section challenge - Solution
 
     return 0;
+}
+
+void display_menu() {
+    cout << "\nP - Print numbers" << endl;
+    cout << "A - Add a number" << endl;
+    cout << "M - Display mean of the numbers" << endl;
+    cout << "S - Display the smallest number" << endl;
+    cout << "L - Display the largest number" << endl;
+    cout << "Q - Quit" << endl;
+    cout << "\nEnter your choice" << endl;
+}
+
+char get_selection() {
+    char selection {};
+    cin >> selection;
+    return toupper(selection);
+}
+
+void display_list(const vector<int> &v) {
+    cout << "[ ";
+    for (auto num : v) {
+        cout << num << " ";
+    }
+    cout << "]" << endl;
+}
+
+void handle_display(const vector<int> &v) {
+    if (v.size() == 0) {
+        cout << "[] - the list is empty" << endl;
+    } else {
+        display_list(v);
+    }
 }
 
 // double calc_area_circle(double radius) {
