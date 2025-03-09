@@ -162,6 +162,20 @@ using namespace std;
 //     return a_penny_doubled_everyday(n - 1, p * 2);
 // }
 
+void display_menu();
+char get_selection();
+void display_list(const vector<int> &v);
+void handle_display(const vector<int> &v);
+void handle_add(vector<int> &v);
+double calculate_mean(const vector<int> &v);
+void handle_mean(const vector<int> &v);
+void handle_quit();
+void handle_unknown();
+void handle_smallest(const vector<int> &v);
+void handle_largest(const vector<int> &v);
+void handle_find(const vector<int> &v);
+bool find(const vector<int> &v, int target);
+
 int main() {
     // double num {};
     // cout << "Enter double: ";
@@ -309,6 +323,9 @@ int main() {
             case 'L':
                 handle_largest(numbers);
                 break;
+            case 'F':
+                handle_find(numbers);
+                break;
             case 'Q':
                 handle_quit();
                 break;
@@ -329,8 +346,9 @@ void display_menu() {
     cout << "M - Display mean of the numbers" << endl;
     cout << "S - Display the smallest number" << endl;
     cout << "L - Display the largest number" << endl;
+    cout << "F - Find a number" << endl;
     cout << "Q - Quit" << endl;
-    cout << "\nEnter your choice" << endl;
+    cout << "\nEnter your choice: ";
 }
 
 char get_selection() {
@@ -353,6 +371,86 @@ void handle_display(const vector<int> &v) {
     } else {
         display_list(v);
     }
+}
+
+void handle_add(vector<int> &v) {
+    int num_to_add {};
+    cout << "Enter an integer to add to the list: ";
+    cin >> num_to_add;
+    v.push_back(num_to_add);
+    cout << num_to_add << " added" << endl;
+}
+
+double calculate_mean(const vector<int> &v) {
+    int total {};
+    for (auto num : v) {
+        total += num;
+    }
+    return static_cast<double>(total) / v.size();
+}
+
+void handle_mean(const vector<int> &v) {
+    if (v.size() == 0) {
+        cout << "Unable to calculate mean - list is empty" << endl;
+    } else {
+        cout << "The mean is " << calculate_mean(v) << endl;
+    }
+}
+
+void handle_quit() {
+    cout << "Goodbye" << endl;
+}
+
+void handle_unknown() {
+    cout << "Unknown selection - try again" << endl;
+}
+
+void handle_smallest(const vector<int> &v) {
+    if (v.size() == 0) {
+        cout << "Cannot get smallest - list is empty" << endl;
+    } else {
+        int res = v.at(0);
+        for (auto num : v) {
+            if (num < res) {
+                res = num;
+            }
+        }
+        cout << "Smallest: " << res << endl;
+    }
+}
+
+void handle_largest(const vector<int> &v) {
+    if (v.size() == 0) {
+        cout << "Cannot get largest - list is empty" << endl;
+    } else {
+        int res = v.at(0);
+        for (auto num : v) {
+            if (num > res) {
+                res = num;
+            }
+        }
+        cout << "Largest: " << res << endl;
+    }
+}
+
+void handle_find(const vector<int> &v) {
+    int target {};
+    cout << "Enter the number to find: ";
+    cin >> target;
+    if (find(v, target)) {
+        cout << target << " was found" << endl;;
+    } else {
+        cout << target << " was not found" << endl;
+    }
+}
+
+bool find(const vector<int> &v, int target) {
+    for (auto num : v) {
+        if (num == target) {
+            return true;
+        }
+    }
+    return false;
 }
 
 // double calc_area_circle(double radius) {
