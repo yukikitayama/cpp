@@ -1,5 +1,14 @@
 # Pointer
 
+- `**Pointer** is a variable whose value is an address of another variable or a function.
+- Need to know its **type** to use the data that the pointer is pointing to.
+- Allocate memory dynamically on the heap or free store.
+  - This memory doesn't have a variable name, so the only way to get to it is via pointer.
+- `variable_type *pointer_name {nullptr};` e.g., `int *int_ptr;`
+- Always initialize pointers
+  - Uninitialized pointers contain garbage data and can point anywhere.
+  - Initializing to zero or `nullptr` represents address zero, implying the pointer is pointing nowhere.
+
 `&` the **address operator** (unary operator) evaluates to the address of its operand.
 
 `int *p;` declares a pointer. `p` is the value of the address pointing at another data. `&p` is the address of this pointer itself.
