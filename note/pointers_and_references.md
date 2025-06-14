@@ -1,0 +1,26 @@
+
+Allocate an integer on the heap, and frees the allocated storage.
+```
+int *int_ptr {nullptr};
+int_ptr = new int;
+delete int_ptr;
+```
+
+Array pointer, don't forget `[]`
+```
+int *array_ptr {nullptr};
+array_ptr = new int[size];
+delete [] array_ptr;
+```
+
+Arrays and pointers
+- The value of an array name is the address of the first element in the array
+- The value of a pointer variable is an address
+- The pointer and array name can be used (almost) interchangeably if the pointer points to the same data type as the array element.
+
+```
+int array_name[] {1, 2, 3};
+int *pointer_name {array_name};
+```
+- `array_name[index]` is equal to `pointer_name[index]`
+- `*(array_name + index)` is equal to `*(pointer_name + index)`
