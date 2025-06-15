@@ -24,3 +24,14 @@ int *pointer_name {array_name};
 ```
 - `array_name[index]` is equal to `pointer_name[index]`
 - `*(array_name + index)` is equal to `*(pointer_name + index)`
+
+Use dereference operator to compare the data pointers point to
+```
+string s1 {"Frank"};
+string s2 {"Frank"};
+
+string *p1 {&s1};
+string *p2 {&s2};
+
+cout << (*p1 == *p2) << endl;  // true
+```

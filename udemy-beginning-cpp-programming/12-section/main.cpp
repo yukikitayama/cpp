@@ -79,15 +79,45 @@ int main() {
     // cout << temp_ptr << endl;
     // delete [] temp_ptr;
 
-    int scores[] {100, 95, 89};
-    int *score_ptr {scores};
-    cout << scores << endl;
-    cout << score_ptr << endl;
-    cout << scores[0] << ' ' << scores[1] << ' ' << scores[2] << endl;
-    cout << score_ptr[0] << ' ' << score_ptr[1] << ' ' << score_ptr[2] << endl;
-    cout << *scores << ' ' << *(scores + 1) << ' ' << *(scores + 2) << endl;
-    cout << *score_ptr << ' ' << *(score_ptr + 1) << ' ' << *(score_ptr + 2) << endl;
+    // int scores[] {100, 95, 89};
+    // int *score_ptr {scores};
+    // cout << scores << endl;
+    // cout << score_ptr << endl;
+    // cout << scores[0] << ' ' << scores[1] << ' ' << scores[2] << endl;
+    // cout << score_ptr[0] << ' ' << score_ptr[1] << ' ' << score_ptr[2] << endl;
+    // cout << *scores << ' ' << *(scores + 1) << ' ' << *(scores + 2) << endl;
+    // cout << *score_ptr << ' ' << *(score_ptr + 1) << ' ' << *(score_ptr + 2) << endl;
 
+    // int scores[] {100, 95, 89, 68, -1};
+    // int *score_ptr {scores};
+    // while (*score_ptr != -1) {
+    //     cout << *score_ptr << endl;
+    //     score_ptr++;
+    // }
+    // score_ptr = scores;
+    // while (*score_ptr != -1)
+    //     cout << *score_ptr++ << endl;
 
+    // string s1 {"Frank"};
+    // string s2 {"Frank"};
+    // string s3 {"James"};
+    // string *p1 {&s1};
+    // string *p2 {&s2};
+    // string *p3 {&s1};
+    // cout << boolalpha;
+    // cout << p1 << "==" << p2 << ": " << (p1 == p2) << endl;
+    // cout << p1 << "==" << p3 << ": " << (p1 == p3) << endl;
+    // cout << *p1 << "==" << *p2 << ": " << (*p1 == *p2) << endl;
+    // cout << *p1 << "==" << *p3 << ": " << (*p1 == *p3) << endl;
+    // p3 = &s3;
+    // cout << *p1 << "==" << *p3 << ": " << (*p1 == *p3) << endl;
+    
+    char name[] {"Frank"};
+    char *char_ptr1 {nullptr};
+    char *char_ptr2 {nullptr};
+    char_ptr1 = &name[0];  // F
+    char_ptr2 = &name[3];  // n
+    cout << "In the string " << name << ", " << *char_ptr2 << " is " << (char_ptr2 - char_ptr1) << " characters away from " << *char_ptr1 << endl;
+    
     return 0;
 }
