@@ -14,6 +14,20 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
+void display(const vector<string> *const v) {
+    // (*v).at(0) = "Funny";
+    for (auto str : *v)
+        cout << str << " ";
+    cout << endl;
+    // v = nullptr;
+}
+
+void display(int *array, int sentinel) {
+    while (*array != sentinel)
+        cout << *array++ << " ";
+    cout << endl;
+}
+
 int main() {
     // int num {10};
     // cout << "Value of num is: " << num << endl;
@@ -138,12 +152,19 @@ int main() {
     // double_data(int_ptr);
     // cout << value << endl;
 
-    int x {100}, y {200};
-    cout << x << endl;
-    cout << y << endl;
-    swap(&x, &y);
-    cout << x << endl;
-    cout << y << endl;
+    // int x {100}, y {200};
+    // cout << x << endl;
+    // cout << y << endl;
+    // swap(&x, &y);
+    // cout << x << endl;
+    // cout << y << endl;
+
+    // vector<string> stooges {"Larry", "Moe", "Curly"};
+    // display(&stooges);
+    // display(&stooges);
+
+    int scores[] {100, 98, 97, 79, 85, -1};
+    display(scores, -1);
 
     return 0;
 }
