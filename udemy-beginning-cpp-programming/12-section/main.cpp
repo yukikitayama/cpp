@@ -4,6 +4,16 @@
 
 using namespace std;
 
+void double_data(int *int_ptr) {
+    *int_ptr *= 2;
+}
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int main() {
     // int num {10};
     // cout << "Value of num is: " << num << endl;
@@ -112,12 +122,28 @@ int main() {
     // p3 = &s3;
     // cout << *p1 << "==" << *p3 << ": " << (*p1 == *p3) << endl;
     
-    char name[] {"Frank"};
-    char *char_ptr1 {nullptr};
-    char *char_ptr2 {nullptr};
-    char_ptr1 = &name[0];  // F
-    char_ptr2 = &name[3];  // n
-    cout << "In the string " << name << ", " << *char_ptr2 << " is " << (char_ptr2 - char_ptr1) << " characters away from " << *char_ptr1 << endl;
+    // char name[] {"Frank"};
+    // char *char_ptr1 {nullptr};
+    // char *char_ptr2 {nullptr};
+    // char_ptr1 = &name[0];  // F
+    // char_ptr2 = &name[3];  // n
+    // cout << "In the string " << name << ", " << *char_ptr2 << " is " << (char_ptr2 - char_ptr1) << " characters away from " << *char_ptr1 << endl;
     
+    // int value {10};
+    // int *int_ptr {nullptr};
+    // cout << value << endl;
+    // double_data(&value);
+    // cout << value << endl;
+    // int_ptr = &value;
+    // double_data(int_ptr);
+    // cout << value << endl;
+
+    int x {100}, y {200};
+    cout << x << endl;
+    cout << y << endl;
+    swap(&x, &y);
+    cout << x << endl;
+    cout << y << endl;
+
     return 0;
 }

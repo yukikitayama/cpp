@@ -35,3 +35,16 @@ string *p2 {&s2};
 
 cout << (*p1 == *p2) << endl;  // true
 ```
+
+Pointers and constants
+- `const int *score_ptr {&high_score};` cannot change the data pointed to by the pointer.
+  - The pointer itself can change and point somewhere else.
+  - *Pointers to constants*
+- `int *const score_ptr {&high_score};` cannot change the pointer itself and cannot point somewhere else
+  - The data pointed to by the pointer can be changed
+  - *Constant pointers*
+- `const int *const score_ptr {&high_score};` cannot change the data pointed to and cannot change the pointer itself.
+  - *Constant pointers to constants*
+
+Passing pointers to a function
+- xxx
