@@ -48,3 +48,10 @@ Pointers and constants
 
 Passing pointers to a function
 - xxx
+
+Returning a pointer from a function
+- `type *function();`
+- Return a parameter pointer
+- Return a pointer to memory dynamically allocated in the function
+- Return a pointer to data that was pased in
+- Never return a pointer to a local function variable, because after function execution, function local variable is gone.

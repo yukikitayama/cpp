@@ -14,18 +14,31 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-void display(const vector<string> *const v) {
-    // (*v).at(0) = "Funny";
-    for (auto str : *v)
-        cout << str << " ";
-    cout << endl;
-    // v = nullptr;
+// void display(const vector<string> *const v) {
+//     // (*v).at(0) = "Funny";
+//     for (auto str : *v)
+//         cout << str << " ";
+//     cout << endl;
+//     // v = nullptr;
+// }
+
+// void display(int *array, int sentinel) {
+//     while (*array != sentinel)
+//         cout << *array++ << " ";
+//     cout << endl;
+// }
+
+int *create_array(size_t size, int init_value = 0) {
+    int *new_storage {nullptr};
+    new_storage = new int[size];
+    for (size_t i{0}; i < size; ++i)
+        *(new_storage + i) = init_value;
+    return new_storage;
 }
 
-void display(int *array, int sentinel) {
-    while (*array != sentinel)
-        cout << *array++ << " ";
-    cout << endl;
+void display(const int *const array, size_t size) {
+    for (size_t i {0}; i < size; ++i)
+        cout << array[i] << " ";
 }
 
 int main() {
@@ -163,8 +176,17 @@ int main() {
     // display(&stooges);
     // display(&stooges);
 
-    int scores[] {100, 98, 97, 79, 85, -1};
-    display(scores, -1);
+    // int scores[] {100, 98, 97, 79, 85, -1};
+    // display(scores, -1);
+
+    int *my_array {nullptr};
+    size_t size;
+    int init_value {};
+    size = 10;
+    init_value = 2;
+    my_array = create_array(size, init_value);
+    display(my_array, size);
+    delete [] my_array;
 
     return 0;
 }
