@@ -179,14 +179,39 @@ int main() {
     // int scores[] {100, 98, 97, 79, 85, -1};
     // display(scores, -1);
 
-    int *my_array {nullptr};
-    size_t size;
-    int init_value {};
-    size = 10;
-    init_value = 2;
-    my_array = create_array(size, init_value);
-    display(my_array, size);
-    delete [] my_array;
+    // int *my_array {nullptr};
+    // size_t size;
+    // int init_value {};
+    // size = 10;
+    // init_value = 2;
+    // my_array = create_array(size, init_value);
+    // display(my_array, size);
+    // delete [] my_array;
+
+    // int num {100};
+    // int &ref {num};
+    // cout << num << endl;
+    // cout << ref << endl;
+    // num = 200;
+    // cout << num << endl;
+    // cout << ref << endl;
+    // ref = 300;
+    // cout << num << endl;
+    // cout << ref << endl;
+
+    vector<string> stooges {"Larry", "Moe", "Curly"};
+    
+    for (auto str: stooges)
+        str = "Funny";
+    for (auto str: stooges)
+        cout << str << endl;
+    cout << endl;
+
+    for (auto &str: stooges)
+        str = "Funny";
+    for (auto const &str: stooges)
+        cout << str << endl;
+    cout << endl;
 
     return 0;
 }

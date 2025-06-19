@@ -55,3 +55,25 @@ Returning a pointer from a function
 - Return a pointer to memory dynamically allocated in the function
 - Return a pointer to data that was pased in
 - Never return a pointer to a local function variable, because after function execution, function local variable is gone.
+
+Pointer pitfalls
+- Uninitialized pointers
+  - Should initialize before using (assigning)
+- Dangling pointers
+  - Pointer that is pointing to released memory. 2 pointers point to the same data, 1 pointer releases the data with `delete`, but the other pointer accesses the released data.
+  - Pointer to a function local variable, and after executing the function, the local variable is gone.
+- Not checking if new failed to allocate memory.
+  - If `new` fails, an exception is thrown.
+  - Dereferencing a null pointer will cause program to crash.
+- Leaking memory
+  - Forgettign to release allocated memory with `delete`.
+  - The memory is *orphaned* or *leaked*.
+  - One of the most common pointer problems.
+
+Reference
+- An alias for a variable
+- Must be initialized to a variable when declared
+- Cannot be null
+- Once initialized, cannot be made to refer to a different variable
+- Useful as function parameters
+- Think of as a constant pointer that is automatically dereferenced.
