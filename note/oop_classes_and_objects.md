@@ -15,3 +15,9 @@
 Declaring a class
 - Capitalize class name for a user defined class
 - Creating a pointer to a class `Player *enemy = new Player();`, `delete enemy;`.
+
+Accessing class members
+- If a pointer to an object, two ways to access
+  - `(*ptr).balance` dereference the pointer and use dot operator
+  - `ptr->balance` use member of pointer operator (arrow operator)
+
