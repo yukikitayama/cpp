@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+#include "Account.h"
+
 using namespace std;
 
 // class Player {
@@ -40,16 +42,52 @@ using namespace std;
 //     bool withdraw(double bal) { balance -= bal; cout << "In withdraw" << endl; }
 // };
 
-class Player {
-private:
-    string name {"Player"};
-    int health;
-    int xp;
-public:
-    void talk(string text_to_say) { cout << name << " says " << text_to_say << endl; }
-    bool is_dead();
-};
+// class Player {
+// private:
+//     string name {"Player"};
+//     int health;
+//     int xp;
+// public:
+//     void talk(string text_to_say) { cout << name << " says " << text_to_say << endl; }
+//     bool is_dead();
+// };
 
+// class Account {
+// private:
+//     string name;
+//     double balance;
+
+// public:
+//     void set_balance(double bal) { balance = bal; }
+//     double get_balance() { return balance; }
+
+//     void set_name(string n);
+//     string get_name();
+//     bool deposit(double amount);
+//     bool withdraw(double amount);
+// };
+
+// void Account::set_name(string n) {
+//     name = n;
+// }
+
+// string Account::get_name() {
+//     return name;
+// }
+
+// bool Account::deposit(double amount) {
+//     balance += amount;
+//     return true;
+// }
+
+// bool Account::withdraw(double amount) {
+//     if (balance - amount >= 0) {
+//         balance -= amount;
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
 int main() {
     // Account frank_account;
@@ -86,10 +124,26 @@ int main() {
     // frank_account.deposit(1000);
     // frank_account.withdraw(500);
 
-    Player frank;
+    // Player frank;
     // frank.name = "Frank";
     // cout << frank.health << endl;
-    frank.talk("Hi");
+    // frank.talk("Hi");
+
+    Account frank_account;
+    frank_account.set_name("Frank's account");
+    frank_account.set_balance(1000.0);
+    if (frank_account.deposit(200.0))
+        cout << "Deposit OK" << endl;
+    else
+        cout << "Deposite Not Allowed" << endl;
+    if (frank_account.withdraw(500.0))
+        cout << "Withdrawal OK" << endl;
+    else
+        cout << "Not Sufficient Funds" << endl;
+    if (frank_account.withdraw(1500.0))
+        cout << "Withdraw OK" << endl;
+    else
+        cout << "Not Sufficient Funds" << endl;
 
     return 0;
 }
