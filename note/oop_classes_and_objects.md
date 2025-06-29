@@ -44,3 +44,16 @@ Include Guard
   // Account class declaration
 #endif
 ```
+
+Connstructors
+- Same name as the class
+- No return type
+- Can be overloaded
+
+Destructors
+- Same name as the class proceeded with a tilde (`~`)
+- Invoked automatically when an object is destroyed
+- Only 1 destructor per class
+- No return type and no parameters
+- Useful to release memory and other resources
+- Automatic destructors are called in a reversed order.

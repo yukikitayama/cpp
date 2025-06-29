@@ -89,6 +89,30 @@ using namespace std;
 //     }
 // }
 
+class Player {
+private:
+    std::string name;
+    int health;
+    int xp;
+
+public:
+    void set_name(std::string name_val) {
+        name = name_val;
+    }
+    Player() { 
+        cout << "No args constructor called" << endl;
+    }
+    Player(std::string name) {
+        cout << "String arg constructor called" << endl;
+    }
+    Player(std::string name, int health, int xp) {
+        cout << "Three args constructor called" << endl;
+    }
+    ~Player() {
+        cout << "Destructor called for " << name << endl;
+    }
+};
+
 int main() {
     // Account frank_account;
     // Account jim_account;
@@ -129,21 +153,44 @@ int main() {
     // cout << frank.health << endl;
     // frank.talk("Hi");
 
-    Account frank_account;
-    frank_account.set_name("Frank's account");
-    frank_account.set_balance(1000.0);
-    if (frank_account.deposit(200.0))
-        cout << "Deposit OK" << endl;
-    else
-        cout << "Deposite Not Allowed" << endl;
-    if (frank_account.withdraw(500.0))
-        cout << "Withdrawal OK" << endl;
-    else
-        cout << "Not Sufficient Funds" << endl;
-    if (frank_account.withdraw(1500.0))
-        cout << "Withdraw OK" << endl;
-    else
-        cout << "Not Sufficient Funds" << endl;
+    // Account frank_account;
+    // frank_account.set_name("Frank's account");
+    // frank_account.set_balance(1000.0);
+    // if (frank_account.deposit(200.0))
+    //     cout << "Deposit OK" << endl;
+    // else
+    //     cout << "Deposite Not Allowed" << endl;
+    // if (frank_account.withdraw(500.0))
+    //     cout << "Withdrawal OK" << endl;
+    // else
+    //     cout << "Not Sufficient Funds" << endl;
+    // if (frank_account.withdraw(1500.0))
+    //     cout << "Withdraw OK" << endl;
+    // else
+    //     cout << "Not Sufficient Funds" << endl;
+
+    {
+        Player slayer;
+        slayer.set_name("Slayer");
+    }
+
+    {
+        Player frank;
+        frank.set_name("Frank");
+        Player hero("Hero");
+        hero.set_name("Hero");
+        Player villain("Villain", 100, 12);
+        villain.set_name("Villain");
+    }
+
+    Player *enemy = new Player;
+    enemy->set_name("Enemy");
+
+    Player *level_boss = new Player("Level Boss", 1000, 300);
+    level_boss->set_name("Level Boss");
+
+    delete enemy;
+    delete level_boss;
 
     return 0;
 }
