@@ -89,6 +89,30 @@ using namespace std;
 //     }
 // }
 
+// class Player {
+// private:
+//     std::string name;
+//     int health;
+//     int xp;
+
+// public:
+//     void set_name(std::string name_val) {
+//         name = name_val;
+//     }
+//     Player() { 
+//         cout << "No args constructor called" << endl;
+//     }
+//     Player(std::string name) {
+//         cout << "String arg constructor called" << endl;
+//     }
+//     Player(std::string name, int health, int xp) {
+//         cout << "Three args constructor called" << endl;
+//     }
+//     ~Player() {
+//         cout << "Destructor called for " << name << endl;
+//     }
+// };
+
 class Player {
 private:
     std::string name;
@@ -99,17 +123,18 @@ public:
     void set_name(std::string name_val) {
         name = name_val;
     }
-    Player() { 
-        cout << "No args constructor called" << endl;
+    std::string get_name() {
+        return name;
     }
-    Player(std::string name) {
-        cout << "String arg constructor called" << endl;
+    Player() {
+        name = "None";
+        health = 100;
+        xp = 3;
     }
-    Player(std::string name, int health, int xp) {
-        cout << "Three args constructor called" << endl;
-    }
-    ~Player() {
-        cout << "Destructor called for " << name << endl;
+    Player(std::string name_val, int health_val, int xp_val) {
+        name = name_val;
+        health = health_val;
+        xp = xp_val;
     }
 };
 
@@ -169,28 +194,33 @@ int main() {
     // else
     //     cout << "Not Sufficient Funds" << endl;
 
-    {
-        Player slayer;
-        slayer.set_name("Slayer");
-    }
+    // {
+    //     Player slayer;
+    //     slayer.set_name("Slayer");
+    // }
 
-    {
-        Player frank;
-        frank.set_name("Frank");
-        Player hero("Hero");
-        hero.set_name("Hero");
-        Player villain("Villain", 100, 12);
-        villain.set_name("Villain");
-    }
+    // {
+    //     Player frank;
+    //     frank.set_name("Frank");
+    //     Player hero("Hero");
+    //     hero.set_name("Hero");
+    //     Player villain("Villain", 100, 12);
+    //     villain.set_name("Villain");
+    // }
 
-    Player *enemy = new Player;
-    enemy->set_name("Enemy");
+    // Player *enemy = new Player;
+    // enemy->set_name("Enemy");
 
-    Player *level_boss = new Player("Level Boss", 1000, 300);
-    level_boss->set_name("Level Boss");
+    // Player *level_boss = new Player("Level Boss", 1000, 300);
+    // level_boss->set_name("Level Boss");
 
-    delete enemy;
-    delete level_boss;
+    // delete enemy;
+    // delete level_boss;
+
+    Player hero;
+    Player frank {"Frank", 100, 13};
+    frank.set_name("Frank");
+    cout << frank.get_name() << endl;
 
     return 0;
 }

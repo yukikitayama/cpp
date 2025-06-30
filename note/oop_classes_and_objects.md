@@ -57,3 +57,10 @@ Destructors
 - No return type and no parameters
 - Useful to release memory and other resources
 - Automatic destructors are called in a reversed order.
+
+Default constructor
+- No argument
+- C++ generate it if you don't write it
+- Called when instantiate a new object with no argument
+- Best practice is to make user-defined no-args constructor
+- Once we provide a constructor for a class, C++ doesn't auto generate no arg default constructor
