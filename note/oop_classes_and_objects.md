@@ -64,3 +64,47 @@ Default constructor
 - Called when instantiate a new object with no argument
 - Best practice is to make user-defined no-args constructor
 - Once we provide a constructor for a class, C++ doesn't auto generate no arg default constructor
+
+Constructor initialization list
+- More efficient
+- Initialization list immediately follows the parameter list
+- Initializes the data members as the object is created
+- Order of initialization is the order of declaration in the class
+- Code in the body of the constructor is just assignment, even if it looks like initializing values.
+
+Delegating constructors
+- Code for one contructor can call another in the initialization list
+- Avoids duplicating code
+
+```
+Player::Player(std::string name_val, int health_val, init xp_val)
+    : name{name_val}, health{health_val}, xp{xp_val} {
+}
+
+// Delegating
+Player::Player()
+    : Player {"None", 0, 0} {
+}
+```
+
+Default constructor parameters
+- Can reduce the number of overloaded constructors
+- Default values appear in declaration, but don't appear in implementation.
+
+Copy constructor
+- `Type::Type(const Type &source);`
+- When objects are copied, C++ must create a new object from an existing object
+- A copy of an object is made when
+  - Passing object by value as a parameter
+  - Returning an object from a function by value
+  - Constructing one object based on another of the same class.
+- Best practices
+  - Provide a copy constructor when your class has raw pointer members
+  - Provide the copy constructor with a **const reference** parameter
+  - Use STL classes as they already provide copy constructors
+  - Avoid using raw pointer data members if possible.
+
+```
+Player hero {"Hero"};
+Player another_hero {hero};  // A copy of hero is made
+```
