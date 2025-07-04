@@ -108,3 +108,13 @@ Copy constructor
 Player hero {"Hero"};
 Player another_hero {hero};  // A copy of hero is made
 ```
+
+Shallow copy and deep copy
+- Consider a class that contains a pointer as a data member
+  - Constructor allocates storage dynamically and initializes the pointer
+  - Destructor releases the memory allocated by the constructor.
+- Shallow copy is the default behavior
+  - Each data member is copied from the source object.
+  - It copies the pointer but it doesn't copy the data it points to.
+  - Problematic when we release the storage in the destructor and if the other object still refers to the released storage. 
+- 

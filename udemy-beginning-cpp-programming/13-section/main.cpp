@@ -177,37 +177,70 @@ using namespace std;
 //     cout << "Three-args constructor" << endl;
 // }
 
-class Player {
+// class Player {
+// private:
+//     std::string name;
+//     int health;
+//     int xp;
+// public:
+//     std::string get_name() { return name; }
+//     int get_health() { return health; }
+//     int get_xp() { return xp; }
+//     Player(std::string name_val = "None", int health_val = 0, int xp_val = 0);
+//     // Copy constructor
+//     Player(const Player &source);
+//     // Destructor
+//     ~Player() { cout << "Destructor called for: " << name << endl; }
+// };
+
+// Player::Player(std::string name_val, int health_val, int xp_val)
+//     : name {name_val}, health {health_val}, xp {xp_val} {
+//     cout << "Three-args constructor for: " << name << endl;
+// }
+
+// Player::Player(const Player &source)
+//     // : name(source.name), health(source.health), xp{source.xp} {
+//     : Player {source.name, source.health, source.xp} {
+//     cout << "Copy constructor - made copy of: " << source.name << endl;
+// }
+
+// void display_player(Player p) {
+//     cout << "Name: " << p.get_name() << endl;
+//     cout << "Health: " << p.get_health() << endl;
+//     cout << "XP: " << p.get_xp() << endl;
+// }
+
+class Deep {
 private:
-    std::string name;
-    int health;
-    int xp;
+    int *data;
 public:
-    std::string get_name() { return name; }
-    int get_health() { return health; }
-    int get_xp() { return xp; }
-    Player(std::string name_val = "None", int health_val = 0, int xp_val = 0);
+    void set_data_value(int d) { *data = d; }
+    int get_data_value() { return *data; }
+    // Constructor
+    Deep(int d);
     // Copy constructor
-    Player(const Player &source);
+    Deep(const Deep &source);
     // Destructor
-    ~Player() { cout << "Destructor called for: " << name << endl; }
+    ~Deep();
 };
 
-Player::Player(std::string name_val, int health_val, int xp_val)
-    : name {name_val}, health {health_val}, xp {xp_val} {
-    cout << "Three-args constructor for: " << name << endl;
+Deep::Deep(int d) {
+    data = new int;
+    *data = d;
 }
 
-Player::Player(const Player &source)
-    // : name(source.name), health(source.health), xp{source.xp} {
-    : Player {source.name, source.health, source.xp} {
-    cout << "Copy constructor - made copy of: " << source.name << endl;
+Deep::Deep(const Deep &source)
+    : Deep {*source.data} {
+    cout << "Copy constructor - deep copy" << endl; 
 }
 
-void display_player(Player p) {
-    cout << "Name: " << p.get_name() << endl;
-    cout << "Health: " << p.get_health() << endl;
-    cout << "XP: " << p.get_xp() << endl;
+Deep::~Deep() {
+    delete data;
+    cout << "Destructor freeing data" << endl;
+}
+
+void display_deep(Deep s) {
+    cout << s.get_data_value() << endl;
 }
 
 int main() {
@@ -294,12 +327,17 @@ int main() {
     // frank.set_name("Frank");
     // cout << frank.get_name() << endl;
 
-    Player empty {"XXXXXX", 100, 50};
-    Player my_new_object {empty};
-    display_player(empty);
-    Player frank {"Frank"};
-    Player hero {"Hero", 100};
-    Player villain {"Villain", 100, 55};
+    // Player empty {"XXXXXX", 100, 50};
+    // Player my_new_object {empty};
+    // display_player(empty);
+    // Player frank {"Frank"};
+    // Player hero {"Hero", 100};
+    // Player villain {"Villain", 100, 55};
+
+    Deep obj1 {100};
+    display_deep(obj1);
+    Deep obj2 {obj1};
+    obj2.set_data_value(1000);
 
     return 0;
 }
