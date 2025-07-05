@@ -117,4 +117,12 @@ Shallow copy and deep copy
   - Each data member is copied from the source object.
   - It copies the pointer but it doesn't copy the data it points to.
   - Problematic when we release the storage in the destructor and if the other object still refers to the released storage. 
-- 
+
+Move constructor
+- C++ 11 introduced move semantics and the move constructor
+- Move constructor moves an object rather than copy it
+- Optional but recommended when you have a raw pointer
+- For efficiency
+- Copies the address of the resource from source to the current object ("move the resource")
+- **Didn't understand move constructor**
+

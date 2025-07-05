@@ -210,37 +210,82 @@ using namespace std;
 //     cout << "XP: " << p.get_xp() << endl;
 // }
 
-class Deep {
+// class Deep {
+// private:
+//     int *data;
+// public:
+//     void set_data_value(int d) { *data = d; }
+//     int get_data_value() { return *data; }
+//     // Constructor
+//     Deep(int d);
+//     // Copy constructor
+//     Deep(const Deep &source);
+//     // Destructor
+//     ~Deep();
+// };
+
+// Deep::Deep(int d) {
+//     data = new int;
+//     *data = d;
+// }
+
+// Deep::Deep(const Deep &source)
+//     : Deep {*source.data} {
+//     cout << "Copy constructor - deep copy" << endl; 
+// }
+
+// Deep::~Deep() {
+//     delete data;
+//     cout << "Destructor freeing data" << endl;
+// }
+
+// void display_deep(Deep s) {
+//     cout << s.get_data_value() << endl;
+// }
+
+class Move {
 private:
     int *data;
 public:
     void set_data_value(int d) { *data = d; }
     int get_data_value() { return *data; }
     // Constructor
-    Deep(int d);
+    Move(int d);
     // Copy constructor
-    Deep(const Deep &source);
+    Move(const Move &source);
+    // Move constructor
+    Move(Move &&source) noexcept;
     // Destructor
-    ~Deep();
+    ~Move();
 };
 
-Deep::Deep(int d) {
+Move::Move(int d) {
     data = new int;
     *data = d;
+    cout << "Constructor for: " << d << endl; 
 }
 
-Deep::Deep(const Deep &source)
-    : Deep {*source.data} {
-    cout << "Copy constructor - deep copy" << endl; 
+// Copy constructor
+Move::Move(const Move &source)
+    : Move {*source.data} {
+    cout << "Copy constructor - deep copy for: " << *data << endl;
 }
 
-Deep::~Deep() {
+// Move constructor
+Move::Move(Move &&source) noexcept
+    : data {source.data} {
+    source.data = nullptr;
+    cout << "Move constructor - moving resource: " << *data << endl;
+}
+
+// Destructor
+Move::~Move() {
+    if (data != nullptr) {
+        cout << "Destructor freeing data for: " << *data << endl;
+    } else {
+        cout << "Destructor freeing data for nullptr" << endl;
+    }
     delete data;
-    cout << "Destructor freeing data" << endl;
-}
-
-void display_deep(Deep s) {
-    cout << s.get_data_value() << endl;
 }
 
 int main() {
@@ -334,10 +379,20 @@ int main() {
     // Player hero {"Hero", 100};
     // Player villain {"Villain", 100, 55};
 
-    Deep obj1 {100};
-    display_deep(obj1);
-    Deep obj2 {obj1};
-    obj2.set_data_value(1000);
+    // Deep obj1 {100};
+    // display_deep(obj1);
+    // Deep obj2 {obj1};
+    // obj2.set_data_value(1000);
+
+    vector<Move> vec;
+    vec.push_back(Move{10});
+    vec.push_back(Move{20});
+    vec.push_back(Move{30});
+    vec.push_back(Move{40});
+    vec.push_back(Move{50});
+    vec.push_back(Move{60});
+    vec.push_back(Move{70});
+    vec.push_back(Move{80});
 
     return 0;
 }
