@@ -243,49 +243,82 @@ using namespace std;
 //     cout << s.get_data_value() << endl;
 // }
 
-class Move {
+// class Move {
+// private:
+//     int *data;
+// public:
+//     void set_data_value(int d) { *data = d; }
+//     int get_data_value() { return *data; }
+//     // Constructor
+//     Move(int d);
+//     // Copy constructor
+//     Move(const Move &source);
+//     // Move constructor
+//     Move(Move &&source) noexcept;
+//     // Destructor
+//     ~Move();
+// };
+
+// Move::Move(int d) {
+//     data = new int;
+//     *data = d;
+//     cout << "Constructor for: " << d << endl; 
+// }
+
+// // Copy constructor
+// Move::Move(const Move &source) 
+//     : Move {*source.data} {
+//     cout << "Copy constructor - deep copy for: " << *data << endl;
+// }
+
+// // Move constructor
+// Move::Move(Move &&source) noexcept
+//     : data {source.data} {
+//     source.data = nullptr;
+//     cout << "Move constructor - moving resource: " << *data << endl;
+// }
+
+// // Destructor
+// Move::~Move() {
+//     if (data != nullptr) {
+//         cout << "Destructor freeing data for: " << *data << endl;
+//     } else {
+//         cout << "Destructor freeing data for nullptr" << endl;
+//     }
+//     delete data;
+// }
+
+class Player {
 private:
-    int *data;
+    std::string name;
+    int health;
+    int xp;   
 public:
-    void set_data_value(int d) { *data = d; }
-    int get_data_value() { return *data; }
-    // Constructor
-    Move(int d);
-    // Copy constructor
-    Move(const Move &source);
-    // Move constructor
-    Move(Move &&source) noexcept;
-    // Destructor
-    ~Move();
+    std::string get_name() const {
+        return name;
+    }
+    void set_name(std::string name_val) {
+        name = name_val;
+    }
+    Player();
+    Player(std::string name_val);
+    Player(std::string name_val, int health_val, int xp_val);
 };
 
-Move::Move(int d) {
-    data = new int;
-    *data = d;
-    cout << "Constructor for: " << d << endl; 
+Player::Player()
+    : Player {"None", 0, 0} {
 }
 
-// Copy constructor
-Move::Move(const Move &source)
-    : Move {*source.data} {
-    cout << "Copy constructor - deep copy for: " << *data << endl;
+Player::Player(std::string name_val)
+    : Player {name_val, 0, 0} {
 }
 
-// Move constructor
-Move::Move(Move &&source) noexcept
-    : data {source.data} {
-    source.data = nullptr;
-    cout << "Move constructor - moving resource: " << *data << endl;
+Player::Player(std::string name_val, int health_val, int xp_val)
+    : name {name_val}, health {health_val}, xp {xp_val} {
 }
 
-// Destructor
-Move::~Move() {
-    if (data != nullptr) {
-        cout << "Destructor freeing data for: " << *data << endl;
-    } else {
-        cout << "Destructor freeing data for nullptr" << endl;
-    }
-    delete data;
+void display_player_name(const Player &p) {
+    cout << p.get_name() << endl;
 }
 
 int main() {
@@ -384,15 +417,23 @@ int main() {
     // Deep obj2 {obj1};
     // obj2.set_data_value(1000);
 
-    vector<Move> vec;
-    vec.push_back(Move{10});
-    vec.push_back(Move{20});
-    vec.push_back(Move{30});
-    vec.push_back(Move{40});
-    vec.push_back(Move{50});
-    vec.push_back(Move{60});
-    vec.push_back(Move{70});
-    vec.push_back(Move{80});
+    // vector<Move> vec;
+    // vec.push_back(Move{10});
+    // vec.push_back(Move{20});
+    // vec.push_back(Move{30});
+    // vec.push_back(Move{40});
+    // vec.push_back(Move{50});
+    // vec.push_back(Move{60});
+    // vec.push_back(Move{70});
+    // vec.push_back(Move{80});
+
+    const Player villain {"Villain", 100, 55};
+    Player hero {"Hero", 100, 15};
+    // villain.set_name("Super");
+    cout << villain.get_name() << endl;
+    cout << hero.get_name() << endl;
+    display_player_name(villain);
+    display_player_name(hero);
 
     return 0;
 }

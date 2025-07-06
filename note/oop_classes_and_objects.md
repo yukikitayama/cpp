@@ -126,3 +126,21 @@ Move constructor
 - Copies the address of the resource from source to the current object ("move the resource")
 - **Didn't understand move constructor**
 
+`this` pointer
+- Contains the address of the current object
+- A pointer to the current object
+- Can only be used in class scope
+- Compare two objects
+
+```
+void Account::set_balance(double balance) {
+    this->balance = balance;
+}
+```
+
+`const` object
+- Can create `const` objects
+  - `const Player villain {"Villain", 100, 55};`
+- Need special syntax for get method
+  - `std::string get_name() const;`
+- All of the getters should be `const`.
