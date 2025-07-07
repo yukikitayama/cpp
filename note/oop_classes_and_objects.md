@@ -144,3 +144,13 @@ void Account::set_balance(double balance) {
 - Need special syntax for get method
   - `std::string get_name() const;`
 - All of the getters should be `const`.
+
+Static class member
+- Static class data member belongs to the class, useful to store class-wide information
+  - `static type name;` in `.h` file
+  - Initialization typically happens in the `.cpp` file.
+  - Constructor and destructor can update the static member.
+- Static class function, independent of any objects, can be called using the class name.
+  - `static type name();` in `.h` file
+  - Static function only can access static members.
+- In `.cpp` file, no need to say `static` again

@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "Account.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -288,37 +289,41 @@ using namespace std;
 //     delete data;
 // }
 
-class Player {
-private:
-    std::string name;
-    int health;
-    int xp;   
-public:
-    std::string get_name() const {
-        return name;
-    }
-    void set_name(std::string name_val) {
-        name = name_val;
-    }
-    Player();
-    Player(std::string name_val);
-    Player(std::string name_val, int health_val, int xp_val);
-};
+// class Player {
+// private:
+//     std::string name;
+//     int health;
+//     int xp;   
+// public:
+//     std::string get_name() const {
+//         return name;
+//     }
+//     void set_name(std::string name_val) {
+//         name = name_val;
+//     }
+//     Player();
+//     Player(std::string name_val);
+//     Player(std::string name_val, int health_val, int xp_val);
+// };
 
-Player::Player()
-    : Player {"None", 0, 0} {
-}
+// Player::Player()
+//     : Player {"None", 0, 0} {
+// }
 
-Player::Player(std::string name_val)
-    : Player {name_val, 0, 0} {
-}
+// Player::Player(std::string name_val)
+//     : Player {name_val, 0, 0} {
+// }
 
-Player::Player(std::string name_val, int health_val, int xp_val)
-    : name {name_val}, health {health_val}, xp {xp_val} {
-}
+// Player::Player(std::string name_val, int health_val, int xp_val)
+//     : name {name_val}, health {health_val}, xp {xp_val} {
+// }
 
-void display_player_name(const Player &p) {
-    cout << p.get_name() << endl;
+// void display_player_name(const Player &p) {
+//     cout << p.get_name() << endl;
+// }
+
+void display_active_player() {
+    cout << "Active players: " << Player::get_num_players() << endl;
 }
 
 int main() {
@@ -427,13 +432,27 @@ int main() {
     // vec.push_back(Move{70});
     // vec.push_back(Move{80});
 
-    const Player villain {"Villain", 100, 55};
-    Player hero {"Hero", 100, 15};
-    // villain.set_name("Super");
-    cout << villain.get_name() << endl;
-    cout << hero.get_name() << endl;
-    display_player_name(villain);
-    display_player_name(hero);
+    // const Player villain {"Villain", 100, 55};
+    // Player hero {"Hero", 100, 15};
+    // // villain.set_name("Super");
+    // cout << villain.get_name() << endl;
+    // cout << hero.get_name() << endl;
+    // display_player_name(villain);
+    // display_player_name(hero);
 
+    display_active_player();
+    Player hero {"Hero"};
+    display_active_player();
+    {
+        Player frank {"Frank"};
+        display_active_player();
+    }
+    display_active_player();
+
+    Player *enemy = new Player("Enemy", 100, 100);
+    display_active_player();
+    delete enemy;
+    display_active_player();
+    
     return 0;
 }
