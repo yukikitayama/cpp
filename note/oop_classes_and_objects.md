@@ -154,3 +154,48 @@ Static class member
   - `static type name();` in `.h` file
   - Static function only can access static members.
 - In `.cpp` file, no need to say `static` again
+
+Structs vs classes
+- `struct` comes from the C programming language
+- Same as `class`
+- Members are public by default
+  - In class, members are private by default
+- `struct`
+  - For passive objects with public access
+  - Don't declare methods
+- `class`
+  - For active objects with private access
+  - Implements getters/setters/methods as needed
+
+Friends of a class
+- Friend is a function or class that has access to private class member, that function or class is not a member of the class it is accessing
+- Use `friend` to declare friendship
+- Friendship is not symmetric and not transitive
+
+```
+class Player {
+  friend void display_player(Player &p);
+  std::string name;
+};
+
+// Non-member function
+void display_player(Player &p) {
+  cout << p.name << endl;
+}
+
+class Player {
+  friend void Other_class::display_player(Player &p);
+  std::string name;
+};
+
+// Member function of another class
+class Other_class {
+  void display_player(Player &p) {
+    cout << p.name << endl;
+  }
+}
+
+class Player {
+  friend class Other_class;  // Another class as a friend
+}
+```
