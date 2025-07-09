@@ -1,5 +1,9 @@
 # Operator overloading
 
+- Use traditional operators such as +, - with user-defined types
+- Make code readnable and writable
+- Must be explicitly defined
+
 **Operator overloading** is a syntactic sugar (Programming language feature that makes code easier to read and write). It still runs functions or methods behind the scene.
 
 Majority of C++'s operators can be overloaded, but the following operators cannot be overload
