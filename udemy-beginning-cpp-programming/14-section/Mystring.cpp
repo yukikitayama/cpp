@@ -36,3 +36,18 @@ void Mystring::display() const {
 int Mystring::get_length() const { return std::strlen(str); }
 
 const char *Mystring::get_str() const { return str; }
+
+// Copy assignment
+Mystring &Mystring::operator=(const Mystring &rhs) {
+    std::cout << "Copy assignment" << std::endl;
+
+    if (this == &rhs)
+        return *this;
+    
+    delete [] this->str;
+
+    str = new char[std::strlen(rhs.str) + 1];
+    std::strcpy(this->str, rhs.str);
+
+    return *this;
+}

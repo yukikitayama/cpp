@@ -13,6 +13,9 @@ public:
     void display() const;
     int get_length() const;
     const char *get_str() const;
+
+    // Copy assignment
+    Mystring &operator=(const Mystring &rhs);
 };
 
 #endif // _MYSTRING_H_

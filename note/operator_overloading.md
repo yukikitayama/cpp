@@ -21,6 +21,15 @@ Basic rules
 - `[]`, `()`, `->`, `=` as assignment operator must be declared as member methods
 - Other operators can be declared as member methods or global functions.
 
+Overloading the assignment operator (copy)
+- C++ provides a default assignment operator used for assigning one object to another
+  - `Mystring s2 = s1;` is not assignment, but initilization
+- Default is memberwise assignment (shallow copy)
+- `Type &Type::operator=(const Type &rhs);`
+  - `Mystring &Mystring::operator=(const Mystring &rhs);`
+
+--------------------------------
+
 **Copy assignment operator** is a default assignment operator provided by C++, used for assigning one object to another. Default is memberwise assignment (shallow copy) if we don't provide our own overloaded assignment operator. Assignment operator can work if previously created and initialized.
 
 Overloading the **copy** assignment operator (deep copy). Use `&`.
