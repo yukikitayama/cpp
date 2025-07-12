@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Mystring.h"
 
 using namespace std;
@@ -11,10 +12,14 @@ int main() {
     // larry.display();
     // stooge.display();
 
+    // Mystring a {"Hello"};
+    // Mystring b;
+    // b = a;
+    // b = "This is a test";
+
     Mystring a {"Hello"};
-    Mystring b;
-    b = a;
-    b = "This is a test";
+    a = Mystring {"Hola"};
+    a = "Bonjour";
 
     return 0;
 }

@@ -9,6 +9,8 @@ public:
     Mystring(const char *s);
     // Copy constructor
     Mystring(const Mystring &source);
+    // Move constructor
+    Mystring(Mystring &&source);
     ~Mystring();
     void display() const;
     int get_length() const;
@@ -16,6 +18,8 @@ public:
 
     // Copy assignment
     Mystring &operator=(const Mystring &rhs);
+    // Move assignment
+    Mystring &operator=(Mystring &&rhs);
 };
 
 #endif // _MYSTRING_H_

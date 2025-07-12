@@ -19,12 +19,21 @@ Mystring::Mystring(const char *s)
     }
 }
 
+// Copy constructor
 Mystring::Mystring(const Mystring &source)
     : str {nullptr} {
     str = new char[std::strlen(source.str) + 1];
     std::strcpy(str, source.str);
 }
 
+// Move constructor
+Mystring::Mystring(Mystring &&source)
+    : str(source.str) {
+    source.str = nullptr;
+    std::cout << "Move constructor used" << std::endl;
+}
+
+// Destructor
 Mystring::~Mystring() {
     delete [] str;
 }
@@ -48,6 +57,22 @@ Mystring &Mystring::operator=(const Mystring &rhs) {
 
     str = new char[std::strlen(rhs.str) + 1];
     std::strcpy(this->str, rhs.str);
+
+    return *this;
+}
+
+// Move assignment
+Mystring &Mystring::operator=(Mystring &&rhs) {
+    std::cout << "Using move assignment" << std::endl;
+    
+    if (this == &rhs)
+        return *this;
+    
+    delete [] str;
+
+    str = rhs.str;
+
+    rhs.str = nullptr;
 
     return *this;
 }

@@ -28,6 +28,17 @@ Overloading the assignment operator (copy)
 - `Type &Type::operator=(const Type &rhs);`
   - `Mystring &Mystring::operator=(const Mystring &rhs);`
 
+Overloading the assignment operator (move)
+- If we have raw pointer, we should overload the move assignment operator for efficiency
+- `Type &Type::operator=(Type &&rhs);`
+- `Mystring &Mystring::operator=(Mystring &&rhs);`
+- Steal the pointer. 
+```
+Mystring s1;
+
+s1 = Mystring {"Frank"};  // move assignment
+```
+
 --------------------------------
 
 **Copy assignment operator** is a default assignment operator provided by C++, used for assigning one object to another. Default is memberwise assignment (shallow copy) if we don't provide our own overloaded assignment operator. Assignment operator can work if previously created and initialized.
