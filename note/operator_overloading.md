@@ -39,6 +39,21 @@ Mystring s1;
 s1 = Mystring {"Frank"};  // move assignment
 ```
 
+Overloading operators as member functions
+- Unary operators as member methods (++, --, -, !)
+  - `ReturnTYpe Type::operatorOp();`
+  - `Number Number::operator-() const;`
+  - `Number Number::operator++():` is pre-increment
+  - `Number Number::operator++(int);` is post-increment
+  - `bool Number::operator!() const;`
+- Binary operators as member methods (+, -, ==, !=, <, >, etc)
+  - `ReturnType Type::operatorOp(const Type &rhs);`
+  - `Number Number::operator+(const Number &rhs) const;`
+  - `Number Number::operator-(const Number &rhs) const;`
+  - `bool Number::operator==(const Number &rhs) const;`
+  - `bool Number::operator<(const Number &rhs) const;`
+
+
 --------------------------------
 
 **Copy assignment operator** is a default assignment operator provided by C++, used for assigning one object to another. Default is memberwise assignment (shallow copy) if we don't provide our own overloaded assignment operator. Assignment operator can work if previously created and initialized.
