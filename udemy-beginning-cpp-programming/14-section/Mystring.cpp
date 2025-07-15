@@ -79,30 +79,62 @@ Mystring &Mystring::operator=(Mystring &&rhs) {
 }
 
 // Overloading equality operator
-bool Mystring::operator==(const Mystring &rhs) const {
-    return (std::strcmp(str, rhs.str) == 0);
-}
+// bool Mystring::operator==(const Mystring &rhs) const {
+//     return (std::strcmp(str, rhs.str) == 0);
+// }
 
 // Unary operator, lowercase
-Mystring Mystring::operator-() const {
-    char *buff = new char[std::strlen(str) + 1];
-    std::strcpy(buff, str);
-    for (size_t i=0; i < std::strlen(buff); i++)
+// Mystring Mystring::operator-() const {
+//     char *buff = new char[std::strlen(str) + 1];
+//     std::strcpy(buff, str);
+//     for (size_t i=0; i < std::strlen(buff); i++)
+//         buff[i] = std::tolower(buff[i]);
+    
+//     Mystring temp {buff};
+    
+//     delete [] buff;
+
+//     return temp;
+// }
+
+// Binary operator, concatenate
+// Mystring Mystring::operator+(const Mystring &rhs) const {
+//     char *buff = new char[std::strlen(str) + std::strlen(rhs.str) + 1];
+//     std::strcpy(buff, str);
+//     std::strcat(buff, rhs.str);
+    
+//     Mystring temp {buff};
+
+//     delete [] buff;
+
+//     return temp;
+// }
+
+// Equality
+bool operator==(const Mystring &lhs, const Mystring &rhs) {
+    return (std::strcmp(lhs.str, rhs.str) == 0);
+}
+
+// Make lowercse
+Mystring operator-(const Mystring &obj) {
+    char *buff = new char[std::strlen(obj.str) + 1];
+    std::strcpy(buff, obj.str);
+    for (size_t i = 0; i < std::strlen(buff); i++) {
         buff[i] = std::tolower(buff[i]);
-    
+    }
     Mystring temp {buff};
-    
+
     delete [] buff;
 
     return temp;
 }
 
-// Binary operator, concatenate
-Mystring Mystring::operator+(const Mystring &rhs) const {
-    char *buff = new char[std::strlen(str) + std::strlen(rhs.str) + 1];
-    std::strcpy(buff, str);
+// Concatenation
+Mystring operator+(const Mystring &lhs, const Mystring &rhs) {
+    char *buff = new char[std::strlen(lhs.str) + std::strlen(rhs.str) + 1];
+    std::strcpy(buff, lhs.str);
     std::strcat(buff, rhs.str);
-    
+
     Mystring temp {buff};
 
     delete [] buff;

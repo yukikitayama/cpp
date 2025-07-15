@@ -53,6 +53,20 @@ Overloading operators as member functions
   - `bool Number::operator==(const Number &rhs) const;`
   - `bool Number::operator<(const Number &rhs) const;`
 
+Overloading operators as global functions
+- Unary operators as global functions (++, --, -, !)
+  - `ReturnType operatorOp(Type &obj)`
+  - `Number operator-(const Number &obj);`
+  - `Number operator++(Number &obj);` pre-increment
+  - `Number operator++(Number &obj, int);` post-increment
+  - `bool operator!(const Number &obj);`
+- Binary operators as global functions (+, -, ==, !=, <, >, etc.)
+  - `ReturnType operatorOp(const Type &lhs, const Type &rhs);`
+  - `Number operator+(const Number &lhs, const Number &rhs);`
+  - `Number operator-(const Number &lhs, const Number &rhs);`
+  - `bool operator==(const Number &lhs, const Number &rhs);`
+  - `bool operator<(const Number &lhs, const Number &rhs);`
+
 
 --------------------------------
 
