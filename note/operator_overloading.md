@@ -67,6 +67,24 @@ Overloading operators as global functions
   - `bool operator==(const Number &lhs, const Number &rhs);`
   - `bool operator<(const Number &lhs, const Number &rhs);`
 
+Overloading the stream insertion and extraction operators
+- <<, >>
+```
+std::ostream &operator<<(std::ostream &os, const Mystring &obj) {
+  os << obj.str;  // if friend function
+  // os << obj.get_str()  // if not friend function
+  return os;
+}
+
+std::istream &operator>>(std::istream &is, Mystring &obj) {
+  char *buff = new char[1000];
+  is >> buff;
+  obj = Mystring {buff};
+  delete [] buff;
+  return is;
+}
+```
+
 
 --------------------------------
 

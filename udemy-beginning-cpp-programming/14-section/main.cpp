@@ -38,21 +38,31 @@ int main() {
     // Mystring three_stooges = moe + " " + larry + " " + "Curly";
     // three_stooges.display();
 
+    // Mystring larry {"Larry"};
+    // larry.display();
+    // larry = -larry;
+    // larry.display();
+    // cout << boolalpha << endl;
+    // Mystring moe {"Moe"};
+    // Mystring stooge = larry;
+    // cout << (larry == moe) << endl;
+    // cout << (larry == stooge) << endl;
+    // Mystring stooges = "Larry" + moe;
+    // stooges.display();
+    // Mystring two_stooges = moe + " " + "Larry";
+    // two_stooges.display();
+    // Mystring three_stooges = moe + " " + larry + " " + "Curly";
+    // three_stooges.display();
+
     Mystring larry {"Larry"};
-    larry.display();
-    larry = -larry;
-    larry.display();
-    cout << boolalpha << endl;
     Mystring moe {"Moe"};
-    Mystring stooge = larry;
-    cout << (larry == moe) << endl;
-    cout << (larry == stooge) << endl;
-    Mystring stooges = "Larry" + moe;
-    stooges.display();
-    Mystring two_stooges = moe + " " + "Larry";
-    two_stooges.display();
-    Mystring three_stooges = moe + " " + larry + " " + "Curly";
-    three_stooges.display();
+    Mystring curly;
+    cout << "Enter the third stooge's first name: ";
+    cin >> curly;
+    cout << "The three stooges are " << larry << ", " << moe << ", and " << curly << endl;
+    cout << "\nEnter the three stooges names separated by a space: ";
+    cin >> larry >> moe >> curly;
+    cout << "The three stooges are " << larry << ", " << moe << ", and " << curly << endl;
 
     return 0;
 }
