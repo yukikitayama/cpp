@@ -141,3 +141,18 @@ Mystring operator+(const Mystring &lhs, const Mystring &rhs) {
 
     return temp;
 }
+
+// Overload insertion operator
+std::ostream &operator<<(std::ostream &os, const Mystring &rhs) {
+    os << rhs.str;
+    return os;
+}
+
+// Overload extraction operator
+std::istream &operator>>(std::istream &in, Mystring &rhs) {
+    char *buff = new char[1000];
+    in >> buff;
+    rhs = Mystring {buff};
+    delete [] buff;
+    return in;
+}

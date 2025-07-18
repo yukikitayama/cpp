@@ -33,6 +33,19 @@ public:
     // Binary operator
     // Mystring operator+(const Mystring &rhs) const;
     // bool operator==(const Mystring &rhs) const;
+
+    // Overload operator member methods
+    Mystring operator-() const;  // Make lowercase
+    Mystring operator+(const Mystring &rhs) const;  // Concatenate
+    bool operator==(const Mystring &rhs) const;  // Equals
+    bool operator!=(const Mystring &rhs) const;  // Not equal
+    bool operator<(const Mystring &rhs) const;  // Less than
+    bool operator>(const Mystring &rhs) const;  // Greater than
+    Mystring &operator+=(const Mystring &rhs);  // Concat and assign
+    Mystring operator*(int n) const;  // Repeat n times
+    Mystring &operator*=(int n);
+    Mystring &operator++();  // pre-increment
+    Mystring operator++(int);  // post-increment
 };
 
 #endif // _MYSTRING_H_
