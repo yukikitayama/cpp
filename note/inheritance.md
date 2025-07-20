@@ -1,5 +1,23 @@
 # Inheritance
 
+- Provides a method for creating new classes from existing classes
+- The new class contains the data and behaviors of the existing class
+- Allow for reuse of existing classes
+- Allows us to focus on common attributes
+- Allows new classes to modify behaviors of existing classes.
+
+```
+class Account {
+  // balance, deposit, withdraw
+};
+
+class Saving_Account : public Account {
+  // interest rate
+};
+```
+
+----------------------
+
 Superclass is **base** class (parent class, super class). Subclass is **derived** class (child class, sub class).
 
 - **Is-A relationship**
