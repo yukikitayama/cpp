@@ -16,6 +16,22 @@ class Saving_Account : public Account {
 };
 ```
 
+Inheritance
+- **Inheritance** is a process of creating new classes from existing classes
+  - Single inheritance, multiple inheritance
+- **Base class (parent class, super class)** is the class being extended or inherited from
+- **Derived class (child class, sub class)** is the class being created from the base class.
+- **Is-A** relationship, derived class is sub-type of base class
+- **Generalization** is combining similar classes into a single, more general class based on common attributes
+- **Specialization** is creating new claases from existing classes providing more specialized attributes or operations
+- **Inheritance hierarchy (class hierarchy)** is organization of inheritance relationships.
+
+Composition
+- Also allow reuse of existing classes
+- **Has-a** relationship
+  - Person has a Account
+- 
+
 ----------------------
 
 Superclass is **base** class (parent class, super class). Subclass is **derived** class (child class, sub class).
