@@ -30,7 +30,26 @@ Composition
 - Also allow reuse of existing classes
 - **Has-a** relationship
   - Person has a Account
-- 
+
+Deriving class from existing class
+- If not use access specifier, private by default
+- Access-specifier can be public, private, protected
+```
+class Base {
+
+};
+
+class Derived: access-specifier Base {
+
+};
+```
+- public
+  - Most common
+  - is-a relationship between base and derived
+- private, protected
+  - Derived has a base relationship
+  - "Is implemented in terms of" relationship
+  - Different from composition
 
 ----------------------
 
