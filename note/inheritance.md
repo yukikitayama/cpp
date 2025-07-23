@@ -51,6 +51,26 @@ class Derived: access-specifier Base {
   - "Is implemented in terms of" relationship
   - Different from composition
 
+Protected members and class access
+- Protected members in the base class are accessible from the base class itself
+- Protected members in the base class are accessible from the derived class
+- Not accessible by objects of Base or Derived.
+- By public inheritance
+  - public member in base class is public in derived class
+  - protected member in base class is protected in derived class
+  - private member in base class is no access in derived class
+- By proteced inheritance
+  - public member in base class is protected in derived class
+  - protected member in base class is protected in derived class
+  - private member in base class is no access in derived class
+- By private inheritance
+  - public member in base class is private in derived class
+  - protected member in base class is private in derived class
+  - private member in base class is no access in derived class.
+
+Constructors and destructors
+- 
+
 ----------------------
 
 Superclass is **base** class (parent class, super class). Subclass is **derived** class (child class, sub class).
