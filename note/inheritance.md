@@ -69,7 +69,17 @@ Protected members and class access
   - private member in base class is no access in derived class.
 
 Constructors and destructors
-- 
+- The Base part of the Derived class must be initialized before the Derived class is initialized.
+- When a Derived object is created, Base class constructor executes, then Derived class constructor executes.
+- Class destructors are invoked in the reverse order as constructors.
+- The Derived part of the Derived class must be destroyed before the Base class destructor is invoked
+- When a Derived object is destroyed, Derived class destructor executes, then Base class destructor executes.
+- Derived class doesn't inherit
+  - Base class constructor, destructor, overloaded assignment operators, friend functions
+- C++11 allows explicit inheritance of base non-special constructors with `using Base::Base;`
+
+
+
 
 ----------------------
 
