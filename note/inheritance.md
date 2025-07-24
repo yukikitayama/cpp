@@ -78,6 +78,18 @@ Constructors and destructors
   - Base class constructor, destructor, overloaded assignment operators, friend functions
 - C++11 allows explicit inheritance of base non-special constructors with `using Base::Base;`
 
+Copy/move constructors and operator with Derived class
+- Not inherited from the Base class automatically
+- May not need to provide your own, because compiler-provided versions maybe be fine.
+```
+Copy constructor
+Derived::Derived(const Derived &other)
+    : Base (other), { Derived initialization list }
+{
+    // Code
+}
+```
+
 
 
 
