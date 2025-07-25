@@ -181,9 +181,11 @@ int main() {
     // Base b1 {b};  // Copy constructor
     // b = b1;  // Copy assignment
 
-    Derived d {100};
-    Derived d1 {d};
-    d = d1;
+    // Derived d {100};
+    // Derived d1 {d};
+    // d = d1;
+
+    
 
     return 0;
 }

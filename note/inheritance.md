@@ -90,6 +90,18 @@ Derived::Derived(const Derived &other)
 }
 ```
 
+Using and redefining Base class methods
+- Derived class can override or redefine Base class methods
+  - Use the same function signature
+- **Static binding** of method calls is the default binding for C++
+- Derived class object uses Derived::method, but we can explicitly invoke Base::method from Derived::method.
+```
+Base *ptr = new Derived();
+ptr->method();  // Call Base::method
+```
+
+
+
 
 
 
