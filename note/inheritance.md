@@ -100,6 +100,17 @@ Base *ptr = new Derived();
 ptr->method();  // Call Base::method
 ```
 
+Multiple inheritance
+```
+class Department_Chair:
+    public Faculty, public Administrator {
+};
+```
+
+
+
+
+
 
 
 
