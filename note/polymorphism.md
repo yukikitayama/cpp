@@ -76,5 +76,10 @@ Trust d;
 display_account(d);
 ```
 
+Using a Base class pointer
+- For dynamic polymorphism, we must have
+  - Inheritance
+  - Base class pointer or Base class reference
+  - Virtual functions
 
 
