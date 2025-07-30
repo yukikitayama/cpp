@@ -82,4 +82,43 @@ Using a Base class pointer
   - Base class pointer or Base class reference
   - Virtual functions
 
+Virtual functions
+- Redefined functions are bound statically
+- Overridden functions are bound dynamically
+- Virtual functions are overridden
+- Allow us to treat all objects generally as objects of the Base class.
+- Declare the function you want to override as virtual in the Base class
+- Virtual functions are virtual all the way down the hierarchy from this point.
+- Dynamic polymorphism only via Account class pointer or reference
+```
+class Account {
+public:
+    virtual void withdraw(double amount);
+};
+```
+- Override the function in the Derived class
+- Function signature and return type must match exactly
+- virtual keyword is not required but **is best practice to restate virtual**.
+- If you don't provide an overridden version, it's inherited from its base case
+```
+class Checking: Account {
+public:
+    virtual void withdraw(double amount);
+};
+```
+- Whenever you have virtual functions, you need to have virtual destructors.
+
+Virtual destructors
+- If a derived class is destroyed by deleting its storage via the base class pointer and the class a non-virtual destructor, then the behavior is undefined.
+- Derived objects must be destroyed in the correct order starting at the correct destructor.
+- **If a class has virtual functions, always provide a public virtual destructor**.
+- If base class destructor is virtual, all derived class destructors are also virtual.
+```
+class Account {
+public:
+    virtual void withdraw(double amount);
+    virtual ~Account();
+};
+```
+
 
