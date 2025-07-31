@@ -121,4 +121,29 @@ public:
 };
 ```
 
+Override specifier
+- `override` specifier by C++11 makes the compiler ensure overriding.
+  - `function_name() const override`. `const` comes first.
+- **You should use `override` every time you override functions from the base class**.
+- The function signature and return type must be exactly the same, but if they are different, then we have redefinition not overriding.
+  - Redefinition is statically bound, while overriding is dynamically bound.
+```
+class Derived: public Base {
+public:
+    virtual void say_hello() override {
+        // Produces compiler error if function signature and return types are different from the base.
+    }
+};
+```
+
+final specifier
+- `final` specifier
+- When used at the class level, prevents a class from being derived from
+- When used at the method level, prevents virtual method from being overridden in derived class.
+```
+class Base final {};
+class Derived final : public Base {};
+```
+
+
 

@@ -20,36 +20,51 @@
 //     obj.say_hello();
 // }
 
-class Account {
+// class Account {
+// public:
+//     virtual void withdraw(double amount) {
+//         std::cout << "In Account::withdraw" << std::endl;
+//     }
+//     virtual ~Account() { std::cout << "Account::destructor" << std::endl; }
+// };
+
+// class Checking: public Account {
+// public:
+//     virtual void withdraw(double amount) {
+//         std::cout << "In Checking::withdraw" << std::endl;
+//     }
+//     virtual ~Checking() { std::cout << "Checking::destructor" << std::endl; }
+// };
+
+// class Savings: public Account {
+// public:
+//     virtual void withdraw(double amount) {
+//         std::cout << "In Savings::withdraw" << std::endl;
+//     }
+//     virtual ~Savings() { std::cout << "Savings::destructor" << std::endl; }
+// };
+
+// class Trust: public Account {
+// public:
+//     virtual void withdraw(double amount) {
+//         std::cout << "In Trust::withdraw" << std::endl;
+//     }
+//     virtual ~Trust() { std::cout << "Trust::destructor" << std::endl; }
+// };
+
+class Base {
 public:
-    virtual void withdraw(double amount) {
-        std::cout << "In Account::withdraw" << std::endl;
+    virtual void say_hello() const {
+        std::cout << "Hello - I'm a Base class object" << std::endl;
     }
-    virtual ~Account() { std::cout << "Account::destructor" << std::endl; }
+    virtual ~Base() {}
 };
 
-class Checking: public Account {
+class Derived: public Base {
 public:
-    virtual void withdraw(double amount) {
-        std::cout << "In Checking::withdraw" << std::endl;
+    virtual void say_hello() const override {
+        std::cout << "Hello - I'm a Derived class object" << std::endl;
     }
-    virtual ~Checking() { std::cout << "Checking::destructor" << std::endl; }
-};
-
-class Savings: public Account {
-public:
-    virtual void withdraw(double amount) {
-        std::cout << "In Savings::withdraw" << std::endl;
-    }
-    virtual ~Savings() { std::cout << "Savings::destructor" << std::endl; }
-};
-
-class Trust: public Account {
-public:
-    virtual void withdraw(double amount) {
-        std::cout << "In Trust::withdraw" << std::endl;
-    }
-    virtual ~Trust() { std::cout << "Trust::destructor" << std::endl; }
 };
 
 int main() {
@@ -65,14 +80,14 @@ int main() {
     // ptr1->say_hello();
     // delete ptr;
 
-    Account *p1 = new Account();
-    Account *p2 = new Savings();
-    Account *p3 = new Checking();
-    Account *p4 = new Trust();
-    p1->withdraw(1000);
-    p2->withdraw(1000);
-    p3->withdraw(1000);
-    p4->withdraw(1000);
+    // Account *p1 = new Account();
+    // Account *p2 = new Savings();
+    // Account *p3 = new Checking();
+    // Account *p4 = new Trust();
+    // p1->withdraw(1000);
+    // p2->withdraw(1000);
+    // p3->withdraw(1000);
+    // p4->withdraw(1000);
     // Account *array [] = {p1, p2, p3, p4};
     // for (auto i = 0; i < 4; ++i)
     //     array[i]->withdraw(1000);
@@ -87,10 +102,17 @@ int main() {
     // accouts.push_back(p4);
     // for (auto acc_ptr: accounts)
     //     acc_ptr->withdraw(1000);
-    delete p1;
-    delete p2;
-    delete p3;
-    delete p4;
+    // delete p1;
+    // delete p2;
+    // delete p3;
+    // delete p4;
+
+    Base *p1 = new Base();
+    p1->say_hello();
+    Derived *p2 = new Derived();
+    p2->say_hello();
+    Base *p3 = new Derived();
+    p3->say_hello();
 
     return 0;
 }
