@@ -52,20 +52,50 @@
 //     virtual ~Trust() { std::cout << "Trust::destructor" << std::endl; }
 // };
 
-class Base {
+// class Base {
+// public:
+//     virtual void say_hello() const {
+//         std::cout << "Hello - I'm a Base class object" << std::endl;
+//     }
+//     virtual ~Base() {}
+// };
+
+// class Derived: public Base {
+// public:
+//     virtual void say_hello() const override {
+//         std::cout << "Hello - I'm a Derived class object" << std::endl;
+//     }
+// };
+
+class Account {
 public:
-    virtual void say_hello() const {
-        std::cout << "Hello - I'm a Base class object" << std::endl;
+    virtual void withdraw(double amount) {
+        std::cout << "Account::withdraw" << std::endl;
     }
-    virtual ~Base() {}
+    virtual ~Account() {}
 };
 
-class Derived: public Base {
-public:
-    virtual void say_hello() const override {
-        std::cout << "Hello - I'm a Derived class object" << std::endl;
+class Trust: public Account {
+    virtual void withdraw(double amount) override {
+        std::cout << "Trust::withdraw" << std::endl;
     }
 };
+
+class Savings: public Account {
+    virtual void withdraw(double amount) override {
+        std::cout << "Savings::withdraw" << std::endl;
+    }
+};
+
+class Checking: public Account {
+    virtual void withdraw(double amount) override {
+        std::cout << "Checking::withdraw" << std::endl;
+    }
+};
+
+void do_withdraw(Account &account, double amount) {
+    account.withdraw(amount);
+}
 
 int main() {
     // Base b;
@@ -107,12 +137,27 @@ int main() {
     // delete p3;
     // delete p4;
 
-    Base *p1 = new Base();
-    p1->say_hello();
-    Derived *p2 = new Derived();
-    p2->say_hello();
-    Base *p3 = new Derived();
-    p3->say_hello();
+    // Base *p1 = new Base();
+    // p1->say_hello();
+    // Derived *p2 = new Derived();
+    // p2->say_hello();
+    // Base *p3 = new Derived();
+    // p3->say_hello();
+
+    Account a;
+    Account &ref = a;
+    ref.withdraw(1000);
+    Trust t;
+    Account &ref1 = t;
+    ref1.withdraw(1000);
+    Account a1;
+    Savings a2;
+    Checking a3;
+    Trust a4;
+    do_withdraw(a1, 1000);
+    do_withdraw(a2, 2000);
+    do_withdraw(a3, 3000);
+    do_withdraw(a4, 4000);
 
     return 0;
 }

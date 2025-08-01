@@ -145,5 +145,37 @@ class Base final {};
 class Derived final : public Base {};
 ```
 
+Base class reference
+- Base class reference can be used with dynamic polymorphism
+- Useful when we pass objects to functions that expect a Base class reference
+```
+Trust t;
+Account &ref = t;
+ref.withdraw(1000);  // Trust::withdraw, this is Base class reference
+
+void do_withdraw(Account &account, double amount) {
+    account.withdraw(amount);
+}
+
+Trust t;
+do_withdraw(t, 1000);  // Trust::withdraw, this is Base class reference
+```
+
+Abstract class with pure virtual function
+- **Abstract class** cannot instantiate object
+  - Too generic to create object from
+    - e.g., shape, account, player
+- Abstract classes are used as base classes in inheritance hierarchies.
+  - Serves as parent to Derived classes.
+- Often referred to as **Abstract Base Class**.
+- **Concrete class** is used to instantiate objects from abstract base class
+- All their member functions must be defined.
+- **Abstract class contains at least one pure virtual function**.
+- **Pure virtual function** is used to make a class abstract
+  - `virtual void function() = 0;` specified with `=0` in its declaration.
+  - Typically don't provide implementations
+
+
+
 
 
