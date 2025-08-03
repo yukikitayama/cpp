@@ -165,6 +165,7 @@ Abstract class with pure virtual function
 - **Abstract class** cannot instantiate object
   - Too generic to create object from
     - e.g., shape, account, player
+  - Cannot be instantiated
 - Abstract classes are used as base classes in inheritance hierarchies.
   - Serves as parent to Derived classes.
 - Often referred to as **Abstract Base Class**.
@@ -174,7 +175,10 @@ Abstract class with pure virtual function
 - **Pure virtual function** is used to make a class abstract
   - `virtual void function() = 0;` specified with `=0` in its declaration.
   - Typically don't provide implementations
-
+  - Derived classes must override the base class
+  - If the Derived class doesn't override, the Derived class is also abstract.
+  - Pure virtual function is used when it doesn't make sense for a base class to have an implementation.
+- We can use pointers and references to dynamically refer to concrete classes derived from them
 
 
 
