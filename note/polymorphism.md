@@ -180,6 +180,15 @@ Abstract class with pure virtual function
   - Pure virtual function is used when it doesn't make sense for a base class to have an implementation.
 - We can use pointers and references to dynamically refer to concrete classes derived from them
 
+Interface
+- Interface is an abstract class with only pure functions
+- Provided as public
+- Every method (service) must be implemented
+- Service type information is strictly enforced.
+- Each subclass is free to implement these services
+- Provides a general set of services to users
+- C++ doesn't have interface keyword, so we use abstract class and pure virtual functions to achieve interface.
+- `friend` function is not inherited.
 
 
 
