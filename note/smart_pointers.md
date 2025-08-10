@@ -44,3 +44,22 @@ Unique pointer
 - `make_unique` C++14
   - `auto p = make_unique<int>(100);`
   - No calls to `new` or `delete`, more efficient
+
+Shared pointer
+- Provides shared ownership of heap objects
+- `shared_prt<t>`
+- It's not unique - there can be many `shared_ptr`s pointing to the same object on the heap
+- Can be assigned and copied, moved.
+- When the use count is zero, the managed object on the heap is destroyed.
+- `std::shared_ptr<int> p1 {new int {100}};`
+- `use_count()` method of `shared_ptr` returns the number of shared_ptr objects managing the heap object.
+- `std::make_shared` is more efficient (C++11). 
+  - When the `use_count` becomes 0, the heap object is deallocated
+```
+std::shared_ptr<int> p1 = std::make_shared<int>(100);  // use_count: 1
+std::shared_ptr<int> p2 { p1 };  // use_count: 2
+std::shared_ptr<int> p3;
+p3 = p1;  // use_count: 3
+```
+
+
