@@ -62,4 +62,10 @@ std::shared_ptr<int> p3;
 p3 = p1;  // use_count: 3
 ```
 
-
+Weak pointers
+- Provides a non-owning weak reference
+- `weak_ptr<T>`
+- Doesn't participate in owning relationship
+- Alwars created from a `shared_ptr`
+- Doesn't increment or decrement reference use count
+- Prevent strong reference cycles which could prevent objects from being deleted
