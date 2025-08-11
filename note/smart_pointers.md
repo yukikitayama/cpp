@@ -69,3 +69,21 @@ Weak pointers
 - Alwars created from a `shared_ptr`
 - Doesn't increment or decrement reference use count
 - Prevent strong reference cycles which could prevent objects from being deleted
+
+Custom deleters
+- This is a special use-case
+```
+void my_deleter(Some_Class *raw_pointer) {
+  // Your custom deleter code
+  delete raw_pointer;
+}
+
+shared_ptr<Some_Class> ptr {new Some_Class{}, my_deleter};
+```
+- Lambda custome deleter
+```
+shared_ptr<Test> ptr (new Test{100}, [] (Test *ptr) {
+  cout << "\tUsing my custom deleter" << endl;
+  delete ptr;
+});
+```
