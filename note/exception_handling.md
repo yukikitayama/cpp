@@ -20,3 +20,17 @@ Basic concepts
 - `catch(Exception ex) {}` is where it handles the exception
   - It can have multiple catch handlers
   - If no catch handler exists, the program terminates.
+- Usually we do exception handling when a function throws an exception.
+
+Throwing an exception from function
+- 
+```
+double calculate_avg(int sum, int total) {
+  if (total == 0)
+    throw 0;
+  return static_cast<double>(sum) / total;
+}
+```
+
+Catch
+- Catch by reference `&` is the best practice
