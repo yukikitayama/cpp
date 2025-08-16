@@ -42,3 +42,16 @@ Stack unqwinding
 - If a `try` block was used to then `catch` blocks are checked for match
 - If no `try` block was used, or the `catch` handler doesn't match, stack unwinding occurs again
 - If the stack is unwound back to `main` and no `catch` handler handles the exception, the program terminates.
+
+User-defined exceptions
+- Create exception classes and throw instances of those classes
+- Best practice
+  - Throw an object, not a primitive type
+  - Throw an object by value
+  - Catch an object by reference (or const reference)
+
+Class-level exceptions
+- Exceptions can be thrown from within a class
+- Method works the same way as functions
+- Constructors may fail, do not return any value, throws an exception if you cannot initialize an object
+- **Do not throw exceptions from destructor**.
