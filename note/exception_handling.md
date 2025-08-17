@@ -55,3 +55,13 @@ Class-level exceptions
 - Method works the same way as functions
 - Constructors may fail, do not return any value, throws an exception if you cannot initialize an object
 - **Do not throw exceptions from destructor**.
+
+C++ standard library exception class hierarchy
+- `std::exception` is the base class
+- All subclasses implement `waht()` virtual function
+- `what()` method provides an exception message. It's used in a catch block.
+- `virtual const char *what() const noexcept;`
+- `noexcept` means a method doesn't throw an exception
+- Destructor is noexcept by default.
+- Create our own user-defined exception subclasses
+
