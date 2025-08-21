@@ -47,3 +47,16 @@ Booleans
   - `std::cout.setf(std::ios::boolalpha);`
   - `std::cout.setf(std::ios::noboolalpha);`
 - `std::cout << std::resetiosflags(std::ios::boolalpha);` resets to default
+
+Integer
+- Default format
+  - Integers are base 10
+  - `noshowbase` prefix of oct and hex isn't displayed.
+  - `nouppercase` when displaying prefix
+  - `noshowpos` no `+` displayed for positive numbers
+- `std::cout << std::dec << num << std::endl;`
+  - `std::hex`, `std::oct`
+- `std::cout << std::showbase;`
+- `std::cout << std::showbase << std::uppercase;  // For 0XFF`
+- `std::cout << std::showpos;  // +255`
+- `std::cout.setf(std::ios::showbase)`
