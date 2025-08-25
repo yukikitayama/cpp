@@ -60,3 +60,18 @@ Integer
 - `std::cout << std::showbase << std::uppercase;  // For 0XFF`
 - `std::cout << std::showpos;  // +255`
 - `std::cout.setf(std::ios::showbase)`
+
+Floating point
+- Default number of digits displayed is 6
+- `setprecision`
+- `fixed`
+- `noshowpoint`
+- `nouppercase`
+- `noshowpos`
+- `std::cout << std::setprecision(3) << std::fixed;` will display precision 3 from the decimal
+- `std::cout << std::setprecision(3) << std::scientific;`
+- `std::cout << std::setprecision(3) << std::scientific << std::uppercase;`
+- `std::showpoint` shows trailing 0s.
+- Returning to general settings
+  - `std::cout.unsetf(std::ios::scientific | std::ios::fixed);`
+  - `std::cout << std::resetiosflags(std::ios::floatfield);`
