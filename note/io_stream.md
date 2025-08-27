@@ -75,3 +75,10 @@ Floating point
 - Returning to general settings
   - `std::cout.unsetf(std::ios::scientific | std::ios::fixed);`
   - `std::cout << std::resetiosflags(std::ios::floatfield);`
+
+Align and fit
+- Default when displaying floating point values is
+  - `setw` not set by default
+  - `left` when no field width, `right` when using field width
+  - `fill` not set by default, blank space is used.
+
