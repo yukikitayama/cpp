@@ -82,3 +82,32 @@ Align and fit
   - `left` when no field width, `right` when using field width
   - `fill` not set by default, blank space is used.
 
+Input files
+- `#include <fstream>`
+- Declare an fstream or `ifstream` object
+- Connect it to a file
+- Read data via stream
+- Close the stream
+- `std::fstream in_file {"text.txt", std::ios::in};`
+- `std::ifstream in_file {""};`
+  - Input file only
+- `in_file.close();`
+- Use `>>` to read from `in_file`
+- `std::getline(in_file, lin);` reads the file one line at a time
+```
+std::ifstream in_file;
+std::string filename;
+std::cin >> filename;
+
+in_file.open(filename);
+
+if (in_file.is_open()) {
+  // read from it
+} else {
+
+}
+
+if (in_file) {
+
+} else {}
+```
