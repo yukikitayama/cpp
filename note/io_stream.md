@@ -111,3 +111,40 @@ if (in_file) {
 
 } else {}
 ```
+
+Output files
+- `#include <fstream>`
+- Declare an `fstream` or `ofstream` object
+- Connect it to a file on file system (opens it for writing)
+- Write data to the file via the stream
+- Close the stream.
+- Output files will be created if they don't exist
+- Output files will be overwritten (truncated) by default.
+- Can be open so that new writes append
+- Can be open in text or binary modes.
+```
+std::ofstream out_file {"./my_file.txt", std::ios::out};
+std::ofstream out_file {"./my_file.txt"};
+std::ofstream out_file {"./my_file.txt", std::ios::binary};
+
+// Truncate (discard contents) when opening
+std::ofstream out_file {"./my_file.txt", std::ios::trunc};
+
+// Append on each write
+std::ofstream out_file {"./my_file.txt", std::ios::app};
+
+// Seek to the end of stream when opening
+std::ofstream out_file {"./my_file.txt", std::ios::ate};
+```
+- Write to files using `<<`
+- Using `std::ifstream in_file` and `std::oftream out_file` to copy a text file one line at a time
+```
+std::string line {};
+while (std::getline(in_file, line))
+    out_file << line << std::endl;
+
+// Copying a text file one character at a time
+char c;
+while (in_file.get(c))
+    out_file.put(c)
+```
