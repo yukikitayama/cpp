@@ -148,3 +148,13 @@ char c;
 while (in_file.get(c))
     out_file.put(c)
 ```
+
+String stream
+- Using **string stream** allows us to read or write from strings in memory as we would read and write to files
+  - Like putting string object to stream, and can use with `>>` or `<<`.
+- Useful for data validation
+- `#include <sstream>`
+- Declare an `stringstream`, `istringstream`, or `ostringstream` object
+  - `ostringstream` object has `str()` method.
+- Connect it to `std::string`
+- Read/write data from/to the string stream using formatted I/O.
