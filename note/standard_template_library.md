@@ -74,4 +74,11 @@ int b {20};
 max<int>(a, b);
 ```
 - vector and smart pointers are implemented as a template class.
+
+C++ class template
+- Similar to function template but at the class level
+- Allow pluggin-in any data type
+- Compiler generates the appropriate class from the blueprint
+- `include <utility>`, `std::pair<>`, 
+- **Template classes are typically completely contained in header files**.
 - 
