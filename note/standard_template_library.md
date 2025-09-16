@@ -81,4 +81,7 @@ C++ class template
 - Compiler generates the appropriate class from the blueprint
 - `include <utility>`, `std::pair<>`, 
 - **Template classes are typically completely contained in header files**.
-- 
+
+std::array
+- Since C++11, the STL has `std::array` which is a template-based array class.
+- Use `std::array` instead of raw arrays whenever possible.
