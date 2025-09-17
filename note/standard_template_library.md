@@ -85,3 +85,14 @@ C++ class template
 std::array
 - Since C++11, the STL has `std::array` which is a template-based array class.
 - Use `std::array` instead of raw arrays whenever possible.
+
+STL containers
+- **Container** is data structure that can store object of almost any type
+- It's implemented in template-based classes
+- Each container has member functions
+- Each container has an associated header file `#include <container_type>`
+- All primitives are okay to stored in the container
+- When an object is stored in the container, the **copy** of the element will be stored.
+- So the element should be copyable, assignable and moveable for efficiency
+- Ordered associative containers must be able to compare elements.
+  - `operator<`, `operator==`
