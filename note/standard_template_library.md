@@ -96,3 +96,50 @@ STL containers
 - So the element should be copyable, assignable and moveable for efficiency
 - Ordered associative containers must be able to compare elements.
   - `operator<`, `operator==`
+
+Iterators
+- Iterators are implemented as template classes
+- **Iterator** allows abstracting an arbitrary container as a sequence of elements
+- They are objects that work like **pointers** by design
+- Most container classes can be traversed with iterators.
+- Iterators must be declared based on the container type they will iterate over
+  - `container_type::iterator_type iterator_name;`
+  - `std::vector<int>::iterator it1;`
+- `begin()` is the first element
+- `end()` is the location one after the last element.
+  - **`end()` is not the last element**. 
+- `std::vector<int>::iterator it = vec.begin();` initializes iterators
+  - Or `auto it = vec.begin();` lets compiler deduce the type
+  - If container is empty, `begin()` points at `end()`
+```
+while (it != vec.end()) {
+  std::cout << *it << " ";
+  ++it;
+}
+
+// Range-based for loop
+for (auto it = vec.begin(); it != vec.end(); it++) {
+  std::cout << *it << " ";
+}
+```
+- In reverse iterator, last element is the first, and first is the last
+  - `++` moves backward
+  - `std::vector<int>::reverse_iterator it = vec.begin()` points at the last element
+- Iterators
+  - `begin()`, `end()`
+  - `cbegin()`, `cend()` are `const_iterator`
+  - `rbegin()`, `rend()` are `reverse_iterator`
+  - `crbegin()`, `crend()` are `const_reverse_iterator`
+- `std::list` is doubly linked list
+  
+Algorithms
+- STL algorithms work on sequences of container elements provided to them by an iterator
+- Many algorithms require extra information in order to do their work
+  - Functors (function objects)
+  - Function pointers
+  - Lambda expressions (C++11)
+- `#include <algorithm>`
+- All STL algorithms expect iterators as arguments
+- **Iterator invalidation** means it's possible iterators become invalid during processing
+  - Iterators point to container elements
+- `for_each` algorithm applies a function to each element in the iterator sequence 
