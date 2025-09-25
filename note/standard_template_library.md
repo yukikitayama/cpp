@@ -143,3 +143,12 @@ Algorithms
 - **Iterator invalidation** means it's possible iterators become invalid during processing
   - Iterators point to container elements
 - `for_each` algorithm applies a function to each element in the iterator sequence 
+
+`std::array`
+- `#include <array>`
+- Creates fixed size array
+- Direct element access and provide access to the underlying raw array
+- Use `std::array` instead raw arrays when possible
+- All iterators available and do not invalidate
+- `std::array<type, size>`
+- `arr1.swap(arr2)` works if both sizes are the same. 
