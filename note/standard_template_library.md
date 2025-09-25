@@ -151,4 +151,18 @@ Algorithms
 - Use `std::array` instead raw arrays when possible
 - All iterators available and do not invalidate
 - `std::array<type, size>`
-- `arr1.swap(arr2)` works if both sizes are the same. 
+- `arr1.swap(arr2)` works if both sizes are the same.
+- `std::accumulate` is in `#include <numeric>`.
+
+`std::vector`
+- `#include <vector>`
+- Dynamic size
+- Elements are stored in contiguous memory
+- Direct element access (constant time)
+- Rapid insertion and deletion at the back (constant time)
+- Insertion or removal of elements other than at the back is linear time.
+- All iterators available and mayb invalidate.
+- `size()`, `capacity()` 
+- `push_back()`, `pop_back()`, `emplace_back()` is **efficient** to create a new object and place
+- `std::sort()`, `std::find()`
+- `insert()`

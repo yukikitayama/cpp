@@ -78,12 +78,36 @@ void test6() {
         std::cout << "No adjacent elements found" << std::endl;
 }
 
+void test7() {
+    std::cout << "\nTest7 =====" << std::endl;
+    std::array<int, 5> arr1 {1, 2, 3, 4, 5};
+    int sum = std::accumulate(arr1.begin(), arr1.end(), 0);
+    std::cout << "Sum of the elements in arr1 is: " << sum << std::endl;
+}
+
+void test8() {
+    std::cout << "\nTest8 =====" << std::endl;
+    std::array<int, 10> arr1 {1, 2, 3, 1, 2, 3, 3, 3, 3, 3};
+    int count = std::count(arr1.begin(), arr1.end(), 3);
+    std::cout << "Found 3: " << count << " times" << std::endl;
+}
+
+void test9() {
+    std::cout << "\nTest9 =====" << std::endl;
+    std::array<int, 10> arr1 {1, 2, 3, 50, 60, 70, 80, 200, 300, 400};
+    int count = std::count_if(arr1.begin(), arr1.end(), [](int x){ return x > 10 && x < 200; });
+    std::cout << "Found " << count << " matches" << std::endl;
+}
+
 int main() {
     // test1();
     // test2();
     // test3();
     // test4();
     // test5();
-    test6();
+    // test6();
+    // test7();
+    // test8();
+    test9();
     return 0;
 }
