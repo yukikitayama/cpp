@@ -163,6 +163,8 @@ Algorithms
 - Insertion or removal of elements other than at the back is linear time.
 - All iterators available and mayb invalidate.
 - `size()`, `capacity()` 
+- Typical behavior of `capacity()` is, once vector exceeds the capacity by `push_back`, it **doubles the size**.
+- `shrink_to_fit()`
 - `push_back()`, `pop_back()`, `emplace_back()` is **efficient** to create a new object and place
 - `std::sort()`, `std::find()`
 - `insert()`
