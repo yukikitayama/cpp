@@ -168,3 +168,16 @@ Algorithms
 - `push_back()`, `pop_back()`, `emplace_back()` is **efficient** to create a new object and place
 - `std::sort()`, `std::find()`
 - `insert()`
+
+`std::deque`
+- `#include <deque>`
+- Dynamic size
+- Elements are NOT stored in contiguous memory
+  - Blocks contain contiguous elements, but blocks are not contiguous
+- Direct element access (constant time)
+- Rapid insertion and deletion at the front and back (constant time)
+- Insertion or removal of elements in the middle is linear time
+- All iterators are available and may invalidate
+- `push_front`, `push_back`
+- `pop_front`, `pop_back`
+- `emplace_front`, `emplace_back`
