@@ -181,3 +181,39 @@ Algorithms
 - `push_front`, `push_back`
 - `pop_front`, `pop_back`
 - `emplace_front`, `emplace_back`
+
+`std::list`, `std::forward_list`
+- Sequence containers
+- Non-contiguous in memory
+- No direct access to elements
+- Very efficient for inserting and deleting elements once an element is found
+
+`std::list`
+- `#include <list>`
+- Dynamic size
+- Direct element access is not provided
+- Rapid insertion and deletion of elements anywhere in the container (constant time)
+- All iterators available and invalidate when corresponding element is deleted.
+- `size()`, `max_size()`, `front()`, `back()`
+- `push_back()`, `pop_back()`
+- `push_front()`, `pop_front()`
+- `emplace_back()`, `emplace_front()`
+- `insert(iterator, element)`
+- `erase(iterator)`
+- `resize(size)`
+- list is bidirectional, so we can iterate backward and forward
+
+`std:forward_list`
+- `#include <forward_list>`
+- Dynamic size
+- Uni-directional, singly-linked
+- Less overhead than `std::list`
+- Direct element access is not provided
+- Rapid insertion and deletion of elements anywhere in the container (constant time)
+- Reverse iterators not available
+- Iterators invalidate when corresponding element is deleted.
+- `size()` not available
+- `back()` not available. Only `front()`.
+- `push_front()`, `pop_front()`, `emplace_front()`
+- `insert_after()`, `emplace_after()`, `erase_after()`
+- `resize()`  
