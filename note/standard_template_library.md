@@ -216,4 +216,54 @@ Algorithms
 - `back()` not available. Only `front()`.
 - `push_front()`, `pop_front()`, `emplace_front()`
 - `insert_after()`, `emplace_after()`, `erase_after()`
-- `resize()`  
+- `resize()`
+
+The below clears anything in standard in. It's a good practice
+```
+std::cin.clear();
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+```
+
+The STL Set containers
+- Associative containers
+  - Collection of stored objects that allow fast retrieval using a key
+  - STL provides Sets and Maps
+  - Usually implemented as a balanced binary tree or hashsets
+  - Most operations are very efficient
+- Sets
+  - `std::set`
+  - `std::unordered_set`
+  - `std::multiset`
+  - `std::unordered_multiset`
+
+`std::set`
+- `#include <set>`
+- Similar to a mathematical set
+- Ordered by key
+- No duplicate elements
+- All iterators available and invalidate when corresponding element is deleted.
+- Uses `operator<` for ordering and determines if an element exists in a set
+- `set.insert()` returns a `std::pair<iterator, bool>` 
+  - First item is an iterator to the inserted element or to the duplicate in the set
+  - Second item is a boolean indicating success or failure of inserting.
+- `set.find(element)` is more efficient than `std::find(set_object)`
+
+`std::multi_set`
+- `#include <set>`
+- Sorted by key
+- Allows duplicate elements
+- All iterators are available
+
+`std::unordered_set`
+- `#include <unordered_set>`
+- Elements are unordered
+- No duplicate element allowed
+- Elements cannot be modified
+  - Must be erased and new element inserted
+- No reverse iterators are allowed
+
+`set::unordered_multiset`
+- `#include <unordered_set>`
+- Elements are unordered
+- Allows duplicate elements
+- No reverse iterators are allowed
