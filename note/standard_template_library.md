@@ -267,3 +267,46 @@ The STL Set containers
 - Elements are unordered
 - Allows duplicate elements
 - No reverse iterators are allowed
+
+The STL Map containers
+- Associative containers
+  - Collection of stored objects that allow fast retrieval using a key
+  - STL provides Sets and Maps
+  - Usually implemented as a balanced binary trees or hashsets
+  - Most operations are very efficient
+- Maps
+  - `std::map`
+  - `std::unordered_map`
+  - `std::multimap`
+  - `std::unordered_multimap`
+
+`std::map`
+- `#include <map>`
+- Similar to a dictionary
+- Elements are stored as Key, Value pairs (`std::pair`)
+- Ordered by key
+- No duplicate elements (keys are unique)
+- Direct element access using the key
+- All iterators available and invalidate when corresponding element is deleted.
+- `std::make_pair()`
+- `map_object["key"] = "value";`
+- `map_object.at("key") = "value";`
+- `find()`, `erase()`, `clear()`, `empty()`
+
+`std::multi_map`
+- `#include <map>`
+- Ordered by key
+- Allows duplicate elements
+- All iterators are available
+
+`std::unordered_map`
+- `#include <unordered_map>`
+- Elements are unordered
+- No duplicate elements allowed
+- No revere iterators are allowed.
+
+`std::unordered_multimap`
+- `#include <unordered_map>`
+- Elements are unordered
+- Allow duplicate elements
+- No reverse iterators are allowed
