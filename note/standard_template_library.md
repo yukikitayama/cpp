@@ -310,3 +310,17 @@ The STL Map containers
 - Elements are unordered
 - Allow duplicate elements
 - No reverse iterators are allowed
+
+`std::stack`
+- Last-in first-out (LIFO) data structure
+- Implemented as an **adapter** over other STL container
+  - Adapter allows us to choose the underlying obects as a vector, list or deque
+- All operations occur on one end of the stack (top)
+- No itertors are supported.
+- `#include <stack>`
+- `push`, `pop`, `top`, `empty`, `size`, `empty`
+- Initialization
+  - `std::stack<int> s;` is deque
+  - `std::stack<int, std::vector<int>> s1;` is vector
+  - `std::stack<int, std::list<int>> s2;` is list
+  - `std::stack<int, std::deque<int>> s3;` is deque
