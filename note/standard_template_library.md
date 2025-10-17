@@ -324,3 +324,29 @@ The STL Map containers
   - `std::stack<int, std::vector<int>> s1;` is vector
   - `std::stack<int, std::list<int>> s2;` is list
   - `std::stack<int, std::deque<int>> s3;` is deque
+
+`std::queue`
+- First-in First-out (FIFO) data structure
+- Implemented as an **adapter** over other STL containers.
+  - Can be implemented as a **list** or **deque**
+- Elements are pushed at the back and popped from the front
+- No iterators are supported
+- `#include <queue>`
+- `push`, `pop`, `front`, `back`, `empty`, `size`
+  - `pop` is pop from the front
+- `std::queue<int> q;` is `deque`
+- `std::queue<int, std::list<int>> q2;` is `list`
+- `std::queue<int, std::deque<int>> q3;` is `deque`
+
+`std::priority_queue`
+- Allows insertions and removal of elements **in order** from the **front** of the container
+- Elements are stored internally as a vector by default
+- Elements are inserted in **priority** order
+- **Largest value will always be at the front**
+- No iterators are supported.
+- `#include <priority_queue>`
+- `push`, `pop`, `top`, `empty`, `size`
+- `pop` removes the greatest element at the top
+- `top` accesses the greatest element at the top
+- `push` inserts an element into sorted order.
+- 
