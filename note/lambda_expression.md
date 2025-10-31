@@ -48,4 +48,11 @@ Stateful lambda expression
   - `[&]` captures everything by reference
   - `[this]` default capture this object by reference
   - `[=, &y]` captures everything by value, but capture only y by reference
-  
+- When used with **class method**, use `[this]`, instead of `[=]` and `[&]`.
+
+Lambdas and the STL
+- Predominant use of Lambda is with Standard Template Library as predicate or operator
+- **Predicate** is a function that takes several arguments and returns a boolean.
+- **Operator** is a function that takes several arguments and applies some operations to them.
+- Unary (binary) predicate and unary (binary) operator means whether a Lambda acts as a predicate or operator, and how many parameters that Lambda requires.
+  - Unary means 1 parameter, binary means 2 parameters.
