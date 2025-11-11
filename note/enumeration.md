@@ -17,3 +17,24 @@ Overview
 - `std::cin >> enum` is not allowed using standard extraction operator.
 - `std::underlying_type_t<enum> user_input;` can work with cin
 - `std::cout` works with enum, underlying type is used.
+
+Unscoped enumerations
+- `enum enum-name : enumerator-type { };`
+- `enum` defines an unscoped enumeration
+
+Scoped enumerations
+- `enum class enum-name : enumerator-type { };`
+- `enum class` or `enum struct` defines a scoped enumeration
+- In unscoped enumerations, enumeration underlying value could cause an issue
+- In unscoped enumerations, name crashes can happen.
+- Scoped enumeration variables are not implicitly convertable.
+- Use explicit casting `int milk_code = static_cast<int>(Item::Milk);` when `enum class Item {Milk = 350, ...};`
+  - or `int(Item::Milk);`
+```
+enum class Whale {Blue, Beluga, Gray};
+
+Whale whale = Whale::Beluga;
+
+if (whale == Whale::Beluga)
+    ...
+```
